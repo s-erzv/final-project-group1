@@ -1,0 +1,128 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    color: #233A25;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 18px 0 0 2.5rem;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 5px;
+    margin: 18px 2.5rem 0 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.5rem 1.5rem;
+    transition: all 0.5s ease-in-out;
+    border-radius: 999px;
+}
+
+nav ul li a:hover {
+    background-color: white;
+    color: #233A25;
+}
+
+.hero {
+    position: relative;
+    width: 95%;
+    height: auto;
+    min-height: 15.7cm;
+    border-radius: 15px;
+    display: flex;
+    justify-content: left;
+    margin: 20px 0 0 35px ;
+    align-items: center;
+    background-image: url('../img/landscape.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.content {
+    max-width: 700px;
+    text-align: left;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.content h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin: 0 0 20px 1.5rem;
+    color: white;
+}
+
+.weather-widget {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px 15px;
+    border-radius: 10px;
+    align-items: center;
+    max-width: 400px;
+    margin-top: 20px;
+    margin-left: 1.5rem;
+}
+
+.weather-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.weather-widget img {
+    width: 17%;
+    margin-right: 10px;
+}
+
+.weather-widget .temp {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #233A25;
+}
+
+.weather-widget .location {
+    font-size: 1rem;
+    color: #233A25;
+}
+
+@media (max-width: 768px) {
+    .content h1 {
+        font-size: 2rem;
+    }
+
+    .weather-widget .temp {
+        font-size: 2rem;
+    }
+
+    .weather-widget .location {
+        font-size: 0.9rem;
+    }
+}
