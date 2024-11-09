@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Halaman Utama</title>
+    <title>Sky Solutions</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -17,29 +17,103 @@
         <div class="logo">Logo</div>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Climate Tips</a></li>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="climateTips.html">Climate Tips</a></li>
                 <li><a href="#">Weather</a></li>
                 <li><a href="#">Carbon Calculator</a></li>
             </ul>
         </nav>
     </header>
-    <div class="hero">
+    <!-- Hero Section styart -->
+    <div class="hero" id="hero">
         <div class="content">
             <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
             <div class="weather-widget">
-                <img src="assets/img/weather.png" alt="Suhu">
+                <img src="assets/img/suhu.png" alt="Suhu">
                 <div class="weather-content">
                     <span class="temp">29°C</span>
                     <span class="location">Pisangan, Ciputat, Tangsel</span>
-                    </div>
+                </div>
             </div>
         </div>
     </div>
-  
+    <!-- Hero Section end -->
 
+    <!-- perubahan iklim section start -->
+    <div class="ic">
+        <img src="assets/img/suhu.png"/>
+        <div class="ic-desc">
+            <h1>Perubahan Iklim</h1>
+            <h3>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, </h3>
+        </div>
+    </div>
+    <!-- perubahan iklim section end -->
+
+    <!-- Penyebab perubahan iklim section start -->
+    <div class="pic">
+        <img src="assets/img/globe.png"/>
+        <div class="pic-desc">
+            <h1>Perubahan Iklim</h1>
+            <h3>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit.</h3>
+            <div class="box-container-p">
+                <div class="box" onclick="showModal('penyebab', 'penyebab1')">Penyebab 1</div>
+                <div class="box" onclick="showModal('penyebab', 'penyebab2')">Penyebab 2</div>
+                <div class="box" onclick="showModal('penyebab', 'penyebab3')">Penyebab 3</div>
+                <div class="box" onclick="showModal('penyebab', 'penyebab4')">Penyebab 4</div>
+                <div class="box" onclick="showModal('penyebab', 'penyebab5')">Penyebab 5</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Penyebab -->
+    <div id="modal-penyebab" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-penyebab')">&times;</span>
+            <h3>Penyebab Perubahan Iklim</h3>
+            <p id="modal-content-penyebab">Isi penyebab akan ditampilkan di sini.</p>
+        </div>
+    </div>
+    
+    <!-- Penyebab perubahan iklim section end -->
+    
+    <!-- Dampak Perubahan Iklim section start -->
+    <div class="impact-section">
+        <div class="dic">
+            <img src="assets/img/impact.png" alt="Globe Image"/>
+            <div class="dic-desc">
+                <h1>Dampak Perubahan Iklim</h1>
+                <h3>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit.</h3>
+                <div class="box-container-d">
+                    <div class="box" onclick="showModal('dampak', 'dampak1')">Dampak 1</div>
+                    <div class="box" onclick="showModal('dampak', 'dampak2')">Dampak 2</div>
+                    <div class="box" onclick="showModal('dampak', 'dampak3')">Dampak 3</div>
+                    <div class="box" onclick="showModal('dampak', 'dampak4')">Dampak 4</div>
+                    <div class="box" onclick="showModal('dampak', 'dampak5')">Dampak 5</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Dampak -->
+    <div id="modal-dampak" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-dampak')">&times;</span>
+            <h3>Dampak Perubahan Iklim</h3>
+            <p id="modal-content-dampak">Isi dampak akan ditampilkan di sini.</p>
+        </div>
+    </div>
+    <!-- Dampak Perubahan Iklim section end -->
+
+    <!-- Grafik section start -->
+     <div class="grafik">
+        <h1>Grafik Perubahan Iklim</h1>
+        <img src="assets/img/grafik.png" alt="grafik perubahan iklim">
+     </div>
+    <!-- Grafik section end -->
   <footer>
+    <div class="logo-footer">Logo</div>
+    <p> Copyright &copy; 2024 Sky Solutions</p>
     </footer>
-
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

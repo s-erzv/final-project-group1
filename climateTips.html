@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Tips</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+<section>
+<header>
+    <div class="logo">Logo</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="climateTips.html">Climate Tips</a></li>
+            <li><a href="#">Weather</a></li>
+            <li><a href="#">Carbon Calculator</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <!-- Hero Section styart -->
+    <div class="hero" id="hero">
+        <div class="content">
+            <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+        </div>
+    </div>
+    <!-- Hero Section end -->
+
+   <!-- Tips Climate-->
+    <div class="tips">
+        <h1>Tips n Trick ea</h1>
+        <div class="box-container-tips">
+            <div class="box" onclick="showModal('tips', 'Tips1')">Tips 1</div>
+            <div class="box" onclick="showModal('tips', 'Tips2')">Tips 2</div>
+            <div class="box" onclick="showModal('tips', 'Tips3')">Tips 3</div>
+            <div class="box" onclick="showModal('tips', 'Tips4')">Tips 4</div>
+            <div class="box" onclick="showModal('tips', 'Tips5')">Tips 5</div>
+        </div>
+        <div id="modal-tips" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('modal-tips')">&times;</span>
+                <h3>Tips for Climate Change</h3>
+                <p id="modal-content-tips">Isi tips akan ditampilkan di sini.</p>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+<footer>
+    <div class="logo-footer">Logo</div>
+    <p> Copyright &copy; 2024 Sky Solutions</p>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #f4f4f4;
+    background-color: white;
 }
 
 header {
@@ -50,6 +50,7 @@ nav ul li a:hover {
     background-color: white;
     color: #233A25;
 }
+
 
 .hero {
     position: relative;
@@ -113,6 +114,353 @@ nav ul li a:hover {
     color: #233A25;
 }
 
+.ic, .dic {
+    display: flex;
+    align-items: center;
+    padding: 2rem 3rem;
+    margin-top: 2rem;
+    margin-left: 1.5rem;
+    width: 95%;
+    height: auto;
+    min-height: 16cm;
+}
+
+.ic-desc {
+    display: grid;
+    margin-left: 2rem;
+}
+
+.ic h1, .dic h1 {
+    font-size: 3rem;
+    text-align: left;
+}
+
+.pic h1 {
+    margin: 6rem 0 -90px 0;
+    font-size: 3.7rem;
+    text-align: left;
+}
+
+.ic h3, .pic h3, .dic h3 {
+    text-align: justify;
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin: 0 0;
+}
+
+.ic img, .dic img {
+    width: 500px;
+    max-width: 90%;
+    height: auto;
+    float: right;
+    padding: 0;
+    margin-left: -50px;
+}
+
+.pic {
+    text-align: center;
+    display: flex;
+    max-width: 98%;
+    width: 98%;
+    flex-direction: row-reverse;
+    padding: 0 0 2rem 6rem;
+    height: auto;
+    margin-top: 2rem;
+    min-height: 16cm;
+}
+
+.pic img {
+    width: 350px;
+    max-width: 90%;
+    float: left;
+    padding: 0;
+    margin: 0 -25px 0 25px;
+}
+
+.pic-desc, .dic-desc {
+    display: grid;
+    float: right;
+    padding-right: 5.5rem;
+    margin-bottom: 5rem;
+}
+
+.tips {
+    height: 13cm;
+}
+
+.tips h1{
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 10rem;
+}
+
+.box-container-tips {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.box-container-p {
+    display: flex;
+    gap: 30px;
+    margin-top: -80px;
+}
+
+.box-container-d {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+
+}
+  
+.box {
+    padding: 20px;
+    background-color: #fdfdfd;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border: 1px solid rgb(216, 216, 216);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border-radius: 5px;
+    margin-top: 2rem;
+}
+  
+.box:hover {
+    transform: scale(1.1);
+}
+  
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #aaa;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+}
+
+.dic {
+    text-align: center;
+    display: flex;
+    max-width: 98%;
+    width: 98%;
+    padding: 0 0 2rem 6rem;
+    height: auto;
+    margin-top: 2rem;
+    min-height: 16cm;
+}
+
+.grafik {
+    text-align: center;
+    max-width: 98%;
+    width: 98%;
+    padding: 0 0 2rem 6rem;
+    height: auto;
+    margin-top: 2rem;
+    min-height: 16cm;
+
+}
+
+.grafik h1 {
+    font-size: 3rem;
+    margin: 2rem 0;
+}
+
+.grafik img {
+    width: 90%;
+    border: 1px solid rgb(177, 177, 177);
+    border-radius: 30px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background-color: white;
+    border-top: 1px solid rgb(148, 148, 148);
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 57rem;
+    margin: 3rem 0 0 0;
+}
+
+.logo-footer {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px;
+    margin: 0 0 0 2rem;
+}
+
+footer p {
+    font-weight: 500;
+    margin: 5px 0 0 0;
+}
+
+.weather-dashboard {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+}
+
+.sidebar {
+    width: 30%;
+    background-color: #f4f6f8;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid #e0e0e0;
+}
+
+.search-bar {
+    width: 90%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.current-weather {
+    text-align: center;
+}
+
+.weather-icon {
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+.temperature {
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.date-time, .description, .rain-chance {
+    color: #555;
+    margin: 5px 0;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.location-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.main-content {
+    width: 70%;
+    padding: 20px;
+}
+
+.weekly-forecast {
+    margin-bottom: 30px;
+}
+
+.tabs {
+    display: flex;
+    gap: 10px;
+}
+
+.tab {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #777;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s;
+}
+
+.tab.active {
+    color: #333;
+    border-color: #333;
+}
+
+.forecast-cards {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.forecast-card {
+    width: 100px;
+    text-align: center;
+    background: #f4f6f8;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.forecast-icon {
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+.highlights h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.highlight-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.highlight-card {
+    background: #f4f6f8;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.highlight-value {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 10px;
+}
 @media (max-width: 768px) {
     .content h1 {
         font-size: 2rem;

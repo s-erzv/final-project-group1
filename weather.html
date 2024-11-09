@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body style="display: grid; align-items: center; justify-content: center; margin: 2rem ;">
+    <div class="weather-dashboard">
+        <!-- Sidebar with Current Weather -->
+        <aside class="sidebar">
+            <input type="text" class="search-bar" placeholder="Search for places ...">
+            <div class="current-weather">
+                <div class="weather-icon">🌤️</div>
+                <h1 class="temperature">12°C</h1>
+                <p class="date-time">Monday, 16:00</p>
+                <p class="description">Mostly Cloudy</p>
+                <p class="rain-chance">Rain - 30%</p>
+                <div class="location">
+                    <img src="city.jpg" alt="City Image" class="location-image">
+                    <p>New York, NY, USA</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Weekly Forecast -->
+            <div class="weekly-forecast">
+                <div class="tabs">
+                    <button class="tab active">Today</button>
+                    <button class="tab">Week</button>
+                </div>
+                <div class="forecast-cards">
+                    <!-- Forecast Card for Each Day -->
+                    <div class="forecast-card">
+                        <p>Sun</p>
+                        <div class="forecast-icon">☀️</div>
+                        <p>15° - 3°</p>
+                    </div>
+                    <div class="forecast-card">
+                        <p>Mon</p>
+                        <div class="forecast-icon">🌦️</div>
+                        <p>12° - 7°</p>
+                    </div>
+                    <!-- More forecast cards for other days -->
+                </div>
+            </div>
+
+            <!-- Today's Highlights -->
+            <div class="highlights">
+                <h2>Today's Highlights</h2>
+                <div class="highlight-cards">
+                    <div class="highlight-card uv-index">
+                        <p>UV Index</p>
+                        <div class="highlight-value">5</div>
+                    </div>
+                    <div class="highlight-card wind-status">
+                        <p>Wind Status</p>
+                        <div class="highlight-value">7.70 km/h WSW</div>
+                    </div>
+                    <div class="highlight-card sunrise-sunset">
+                        <p>Sunrise & Sunset</p>
+                        <div class="highlight-value">6:35 AM - 5:42 PM</div>
+                    </div>
+                    <div class="highlight-card humidity">
+                        <p>Humidity</p>
+                        <div class="highlight-value">12%</div>
+                    </div>
+                    <div class="highlight-card visibility">
+                        <p>Visibility</p>
+                        <div class="highlight-value">5.2 km</div>
+                    </div>
+                    <div class="highlight-card air-quality">
+                        <p>Air Quality</p>
+                        <div class="highlight-value">105 Unhealthy</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
