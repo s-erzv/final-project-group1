@@ -1,86 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Dashboard</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Weather App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        #weather-app {
+            background-size: cover;
+            background-position: center;
+        }
+
+        .icon-transition {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .scrollable-right {
+            max-height: 100vh;
+            overflow-y: auto;
+        }
+    </style>
 </head>
-<body style="display: grid; align-items: center; justify-content: center; margin: 2rem ;">
-    <div class="weather-dashboard">
-        <!-- Sidebar with Current Weather -->
-        <aside class="sidebar">
-            <input type="text" class="search-bar" placeholder="Search for places ...">
-            <div class="current-weather">
-                <div class="weather-icon">🌤️</div>
-                <h1 class="temperature">12°C</h1>
-                <p class="date-time">Monday, 16:00</p>
-                <p class="description">Mostly Cloudy</p>
-                <p class="rain-chance">Rain - 30%</p>
-                <div class="location">
-                    <img src="city.jpg" alt="City Image" class="location-image">
-                    <p>New York, NY, USA</p>
-                </div>
-            </div>
-        </aside>
 
-        <!-- Main Content -->
-        <main class="main-content">
-            <!-- Weekly Forecast -->
-            <div class="weekly-forecast">
-                <div class="tabs">
-                    <button class="tab active">Today</button>
-                    <button class="tab">Week</button>
-                </div>
-                <div class="forecast-cards">
-                    <!-- Forecast Card for Each Day -->
-                    <div class="forecast-card">
-                        <p>Sun</p>
-                        <div class="forecast-icon">☀️</div>
-                        <p>15° - 3°</p>
-                    </div>
-                    <div class="forecast-card">
-                        <p>Mon</p>
-                        <div class="forecast-icon">🌦️</div>
-                        <p>12° - 7°</p>
-                    </div>
-                    <!-- More forecast cards for other days -->
-                </div>
+<body class="bg-gray-900 bg-opacity-50" id="weather-app">
+    <div class="w-full h-full flex flex-col md:flex-row">
+        <div class="flex-1 flex flex-col items-center justify-center p-8">
+            <div class="text-white text-4xl md:text-6xl font-bold" id="temperature"></div>
+            <div class="text-white text-3xl md:text-4xl" id="city"></div>
+            <div class="text-white text-lg mt-2" id="date-time"></div>
+
+            <div class="mt-4">
+                <i id="weather-icon" class="fas text-4xl md:text-5xl text-white"></i>
+            </div>
+        </div>
+
+        <div class="w-full md:w-1/3 p-8 text-white bg-transparent backdrop-blur-sm border-2 border-white rounded-lg mt-8 md:mt-0 scrollable-right">
+            <nav class="hidden md:flex space-x-4 mb-4">
+                <a href="index.html" class="text-white hover:text-gray-200">Home</a>
+                <a href="climateTips.html" class="text-white hover:text-gray-200">Tips</a>
+                <a href="weather.html" class="text-white hover:text-gray-200">Weather</a>
+                <a href="#" class="text-white hover:text-gray-200">Calculator</a>
+            </nav>
+
+            <div class="md:hidden flex items-center justify-between p-4">
+                <button id="hamburger" class="text-white text-2xl">
+                    <i class="fas fa-bars"></i> 
+                </button>
+            </div>
+            
+            <div id="mobile-menu" class="hidden bg-transparent text-white p-4 space-y-4">
+                <a href="index.html" class="block hover:text-gray-200 text-lg">Home</a>
+                <a href="climateTips.html" class="block hover:text-gray-200 text-lg">Tips</a>
+                <a href="weather.html" class="block hover:text-gray-200 text-lg">Weather</a>
+                <a href="#" class="block hover:text-gray-200 text-lg">Calculator</a>
             </div>
 
-            <!-- Today's Highlights -->
-            <div class="highlights">
-                <h2>Today's Highlights</h2>
-                <div class="highlight-cards">
-                    <div class="highlight-card uv-index">
-                        <p>UV Index</p>
-                        <div class="highlight-value">5</div>
-                    </div>
-                    <div class="highlight-card wind-status">
-                        <p>Wind Status</p>
-                        <div class="highlight-value">7.70 km/h WSW</div>
-                    </div>
-                    <div class="highlight-card sunrise-sunset">
-                        <p>Sunrise & Sunset</p>
-                        <div class="highlight-value">6:35 AM - 5:42 PM</div>
-                    </div>
-                    <div class="highlight-card humidity">
-                        <p>Humidity</p>
-                        <div class="highlight-value">12%</div>
-                    </div>
-                    <div class="highlight-card visibility">
-                        <p>Visibility</p>
-                        <div class="highlight-value">5.2 km</div>
-                    </div>
-                    <div class="highlight-card air-quality">
-                        <p>Air Quality</p>
-                        <div class="highlight-value">105 Unhealthy</div>
-                    </div>
+            <hr class="border-white mb-4">
+
+            <div class="mb-4 bg-transparent backdrop-blur-sm p-4 rounded-lg">
+                <div class="text-xl mb-2">Search Location</div>
+                <div class="flex items-center space-x-2" id="search-city">
+                    <input type="text" id="search-input" placeholder="Enter city name" class="p-2 bg-transparent text-white border-2 border-white rounded-md flex-grow" />
+                    <button id="search-button" class="p-2 bg-blue-500 text-white rounded-md">
+                        <i class="fas fa-search"></i>
+                    </button>
                 </div>
             </div>
-        </main>
+
+            <hr class="border-white mb-6">
+
+            <div class="text-xl font-semibold mb-4">Weather Details</div>
+            <div id="weather-description" class="text-xl font-bold mb-6"></div>
+            <div class="flex justify-between items-center mb-6 text-base">
+                <div>Temp max</div>
+                <div class="flex items-center">
+                    <div id="temp-max"></div>
+                    <i class="fas fa-thermometer-full text-red-500 ml-4"></i>
+                </div>
+            </div>
+            <div class="flex justify-between items-center mb-6 text-base">
+                <div>Temp min</div>
+                <div class="flex items-center">
+                    <div id="temp-min"></div>
+                    <i class="fas fa-thermometer-empty text-blue-500 ml-4"></i>
+                </div>
+            </div>
+            <div class="flex justify-between items-center mb-6 text-base">
+                <div>Humidity</div>
+                <div class="flex items-center">
+                    <div id="humidity"></div>
+                    <i class="fas fa-tint text-blue-500 ml-4"></i>
+                </div>
+            </div>
+            <div class="flex justify-between items-center mb-6 text-base">
+                <div>Cloudy</div>
+                <div class="flex items-center">
+                    <div id="cloudiness"></div>
+                    <i class="fas fa-cloud text-gray-500 ml-4"></i>
+                </div>
+            </div>
+            <div class="flex justify-between items-center mb-6 text-base">
+                <div>Wind</div>
+                <div class="flex items-center">
+                    <div id="wind"></div>
+                    <i class="fas fa-wind text-gray-500 ml-4"></i>
+                </div>
+            </div>
+   
+            <hr class="border-white mb-6">
+
+
+            <div class="text-xl font-semibold mb-4">Weather Forecast</div>
+            <div class="flex flex-col space-y-4" id="weather-forecast"></div>
+        </div>
     </div>
-
-    <script src="assets/js/main.js"></script>
 </body>
+
+<script src="assets/js/weather.js"></script>
 </html>
