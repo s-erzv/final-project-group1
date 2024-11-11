@@ -50,6 +50,10 @@ nav ul li a:hover {
     background-color: white;
     color: #233A25;
 }
+nav ul li a.active {
+    background-color: white;
+    color: #233A25;
+}
 
 
 .hero {
@@ -81,7 +85,7 @@ nav ul li a:hover {
     margin: 0 0 20px 1.5rem;
     color: white;
 }
-
+/* 
 .weather-widget {
     display: flex;
     background-color: rgba(255, 255, 255, 0.8);
@@ -112,7 +116,7 @@ nav ul li a:hover {
 .weather-widget .location {
     font-size: 1rem;
     color: #233A25;
-}
+} */
 
 .ic, .dic {
     display: flex;
@@ -136,8 +140,8 @@ nav ul li a:hover {
 }
 
 .pic h1 {
-    margin: 6rem 0 -90px 0;
-    font-size: 3.7rem;
+    margin: 6rem 0 -40px 0;
+    font-size: 3.3rem;
     text-align: left;
 }
 
@@ -233,28 +237,22 @@ nav ul li a:hover {
 .modal {
     display: none;
     position: fixed;
-    z-index: 1000;
-    left: 0;
     top: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(8px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000; 
+    background-color: rgba(0, 0, 0, 0.5); 
 }
 
 .modal-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 500px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
     position: relative;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    z-index: 1010; 
 }
+
 
 .close-btn {
     position: absolute;
@@ -298,11 +296,41 @@ nav ul li a:hover {
     margin: 2rem 0;
 }
 
-.grafik img {
-    width: 90%;
-    border: 1px solid rgb(177, 177, 177);
-    border-radius: 30px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+.carousel-container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 300%;
+}
+
+.carousel img {
+    width: 100%;
+    flex: 1;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
 }
 
 footer {
@@ -329,13 +357,14 @@ footer p {
 
 .weather-dashboard {
     display: flex;
-    width: 90%;
+    width: 98%;
     max-width: 1200px;
     background: #fff;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     font-family: 'Poppins', sans-serif;
+    margin: 6.5rem 0 0 1rem;
 }
 
 .sidebar {
@@ -377,16 +406,17 @@ footer p {
 }
 
 .location {
-    display: flex;
+    display: grid;
     align-items: center;
     margin-top: 20px;
+    justify-content: center;
 }
 
 .location-image {
-    width: 50px;
-    height: 50px;
+    width: 50%;
+    height: auto;
     border-radius: 8px;
-    margin-right: 10px;
+    margin: 0 0 1rem 4.5rem;
 }
 
 .main-content {
@@ -461,6 +491,87 @@ footer p {
     font-weight: 600;
     margin-top: 10px;
 }
+.container-cc {
+    width: 500px;
+    padding: 2rem;
+    border-radius: 10px 0 0 10px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    height: 13.5cm;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.container-cch {
+    width: 500px;
+    min-height: 13.5cm;
+    height: auto;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    border-radius: 0 10px 10px 0;
+}
+
+.result-container {
+    max-width: 500px;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+input[type="number"]::placeholder {
+    color: #999;
+}
+
+.btn-secondary {
+    background-color: #7b9c5d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    color: white;
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #42592c;
+}
+
+.bg-success {
+    background-color: #aacf87 !important;
+    color: white;
+    padding: 1rem;
+    border-radius: 5px;
+}
+ h5 {
+    margin-top: 10px;
+ }
+
+ h2{
+    margin: 0 0 5px 0;
+    font-size: 1rem;
+}
+
+h1{
+    margin: 20px 0 0 0;
+ }
+
+
 @media (max-width: 768px) {
     .content h1 {
         font-size: 2rem;

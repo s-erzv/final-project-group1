@@ -1,6 +1,17 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", () => {
+    // Set active navigation link based on current path
+    const currentPath = window.location.pathname.split("/").pop();
+    const navLinks = document.querySelectorAll("nav ul li a");
+
+    navLinks.forEach(link => {
+        if (link.getAttribute("href") === currentPath) {
+            link.classList.add("active");
+        }
+    });
+
+    // Manage active state for navigation items
     const navItems = document.querySelectorAll('.nav-item');
-    
+
     navItems.forEach(item => {
         item.addEventListener('click', function () {
             navItems.forEach(navItem => navItem.classList.remove('active'));
@@ -8,76 +19,92 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // Data for content (penyebab, dampak, tips)
     const contentData = {
         penyebab: {
-            penyebab1: "Deskripsi untuk penyebab 1.",
-            penyebab2: "Deskripsi untuk penyebab 2.",
-            penyebab3: "Deskripsi untuk penyebab 3.",
-            penyebab4: "Deskripsi untuk penyebab 4.",
-            penyebab5: "Deskripsi untuk penyebab 5."
+            penyebab1: "Gas Rumah Kaca: Gas rumah kaca seperti karbon dioksida, metana, dan dinitrogen oksida adalah gas yang menyerap panas, menyebabkan peningkatan suhu global.",
+            penyebab2: "Peningkatan Emisi: Emisi dari pembakaran bahan bakar fosil dan industri menambah jumlah CO2 dan gas lainnya di atmosfer.",
+            penyebab3: "Pemanasan Global: Suhu rata-rata global meningkat lebih dari 0,85°C sejak akhir abad ke-19, dipicu oleh aktivitas manusia.",
+            penyebab4: "Perubahan Orbit Bumi: Siklus alami perubahan orbit Bumi dapat memengaruhi iklim, meskipun pengaruhnya tidak secepat aktivitas manusia.",
         },
         dampak: {
-            dampak1: "Deskripsi dampak 1.",
-            dampak2: "Deskripsi dampak 2.",
-            dampak3: "Deskripsi dampak 3.",
-            dampak4: "Deskripsi dampak 4.",
-            dampak5: "Deskripsi dampak 5."
+            dampak1: "Menurunnya Kualitas Air: Curah hujan tinggi menurunkan kualitas air, sementara peningkatan suhu mempengaruhi kadar klorin.",
+            dampak2: "Berkurangnya Kuantitas Air: Curah hujan tinggi bisa menyebabkan air cepat kembali ke laut tanpa tersimpan sebagai air bersih.",
+            dampak3: "Perubahan Habitat: Banjir dan badai mengubah habitat alami, membahayakan berbagai spesies makhluk hidup.",
+            dampak4: "Punahnya Spesies: Perubahan suhu dan lingkungan yang cepat menyebabkan kepunahan beberapa spesies yang tak sempat beradaptasi.",
+            dampak5: "Meningkatnya Wabah Penyakit: Curah hujan tinggi memicu peningkatan wabah seperti malaria dan demam berdarah.",
         },
         tips: {
-            Tips1: "Deskripsi Tips 1.",
-            Tips2: "Deskripsi Tips 2.",
-            Tips3: "Deskripsi Tips 3.",
-            Tips4: "Deskripsi Tips 4.",
-            Tips5: "Deskripsi Tips 5."
+            Tips1: "Menghemat Energi: Kurangi penggunaan energi untuk mengurangi emisi gas rumah kaca.",
+            Tips2: "Berjalan Kaki atau Bersepeda: Mengurangi emisi kendaraan sekaligus menyehatkan.",
+            Tips3: "Konsumsi Lebih Banyak Sayuran: Produksi sayuran lebih ramah lingkungan daripada daging dan susu.",
+            Tips4: "Kurangi Penggunaan Pesawat: Mengurangi emisi dengan mengurangi perjalanan udara.",
+            Tips5: "Daur Ulang dan Kurangi Limbah: Kurangi pembelian barang baru, perbaiki dan daur ulang barang yang bisa digunakan kembali."
         }
     };
 
-    function showModal(type, key) {
-        const content = contentData[type][key];
-        let modalId, contentId;
+    function showModal(modalId, contentId) {
+        // Mengambil elemen modal dan elemen konten
+        const modal = document.getElementById('modal-' + modalId);
+        const content = document.getElementById('modal-content-' + modalId);
     
-        if (type === 'penyebab') {
-            modalId = 'modal-penyebab';
-            contentId = 'modal-content-penyebab';
-        } else if (type === 'dampak') {
-            modalId = 'modal-dampak';
-            contentId = 'modal-content-dampak';
-        } else if (type === 'tips') {
-            modalId = 'modal-tips';
-            contentId = 'modal-content-tips';
-        }
-    
-        document.getElementById(contentId).innerText = content;
-        document.getElementById(modalId).style.display = "flex"; 
-        document.body.style.overflow = "hidden"; 
+        // Mengambil elemen konten yang akan dimasukkan ke modal
+        const sourceContent = document.getElementById(contentId).innerHTML;
+        
+        // Mengisi modal dengan konten
+        content.innerHTML = sourceContent;
+        
+        // Menampilkan modal
+        modal.style.display = 'block';
     }
     
     function closeModal(modalId) {
-        document.getElementById(modalId).style.display = "none";
-        document.body.style.overflow = "auto";
+        // Menyembunyikan modal
+        document.getElementById('modal-' + modalId).style.display = 'none';
     }
-
+    
+    // Menutup modal saat klik di luar konten
     window.onclick = function (event) {
         const modalPenyebab = document.getElementById("modal-penyebab");
         const modalDampak = document.getElementById("modal-dampak");
-        const modalTips = document.getElementById("modal-tips");
-
+    
         if (event.target === modalPenyebab) {
             closeModal('modal-penyebab');
-        };
-        if (event.target === modalDampak) {
+        } else if (event.target === modalDampak) {
             closeModal('modal-dampak');
-        };
-        if (event.target === modalTips) {
-            closeModal('modal-tips');
-        };
+        }
     };
 
-    const apiKey = "YOUR_API_KEY";  // Replace with your OpenWeatherMap API key
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=${apiKey}`;
+    let currentIndex = 0;
+
+    function showSlide(index) {
+        const carousel = document.getElementById('carousel');
+        const slides = document.querySelectorAll('.carousel img');
+        if (index >= slides.length) {
+            currentIndex = 0;
+        } else if (index < 0) {
+            currentIndex = slides.length - 1;
+        } else {
+            currentIndex = index;
+        }
+        const offset = -currentIndex * 100;
+        carousel.style.transform = `translateX(${offset}%)`;
+    }
+
+    function nextSlide() {
+        showSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+        showSlide(currentIndex - 1);
+    }
+
+    // API Key and base URL for weather data
+    const apiKey = "e94c47d77102e12b744c8f55001d7800";
 
     const searchBar = document.querySelector(".search-bar");
 
+    // Event listener for Enter key to search city weather
     searchBar.addEventListener("keypress", (event) => {
         if (event.key === "Enter") {
             const city = searchBar.value.trim();
@@ -87,6 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    // Fetch weather data function
     async function fetchWeatherData(city) {
         const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
@@ -98,13 +126,13 @@ document.addEventListener('DOMContentLoaded', function () {
             updateDashboard({
                 temperature: `${data.main.temp}°C`,
                 description: data.weather[0].description,
-                uvIndex: "N/A",  // OpenWeatherMap doesn't provide UV index in the free API
+                uvIndex: "N/A",
                 windSpeed: `${data.wind.speed} km/h`,
                 sunrise: formatTime(data.sys.sunrise),
                 sunset: formatTime(data.sys.sunset),
                 humidity: `${data.main.humidity}%`,
                 visibility: `${data.visibility / 1000} km`,
-                airQuality: "N/A"  // OpenWeatherMap doesn't provide AQI in the free API
+                airQuality: "N/A"
             });
         } catch (error) {
             console.error("Error fetching weather data:", error);
@@ -112,6 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    // Update weather dashboard function
     function updateDashboard(data) {
         document.querySelector(".temperature").textContent = data.temperature;
         document.querySelector(".description").textContent = data.description;
@@ -123,6 +152,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelector(".air-quality .highlight-value").textContent = data.airQuality;
     }
 
+    // Convert Unix time to readable format
     function formatTime(unixTime) {
         const date = new Date(unixTime * 1000);
         const hours = date.getHours().toString().padStart(2, '0');
@@ -130,4 +160,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const period = hours >= 12 ? 'PM' : 'AM';
         return `${hours % 12 || 12}:${minutes} ${period}`;
     }
+
+    // Make showModal and closeModal available globally for onclick usage in HTML
+    window.showModal = showModal;
+    window.closeModal = closeModal;
 });

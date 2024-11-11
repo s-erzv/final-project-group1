@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kalkulator Emisi Karbon</title>
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+    
+    <body style="display: grid; align-items: center; justify-content: center;background-image: url('assets/img/landscape.jpg');background-size: cover; background-position: center; background-color: rgba(58, 57, 57, 0.5);backdrop-filter: blur(10px);">
+        <header>
+            <div class="logo">Logo</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="climateTips.html">Climate Tips</a></li>
+                    <li><a href="weather.html">Weather</a></li>
+                    <li><a href="carbonCalculator.html">Carbon Calculator</a></li>
+                </ul>
+            </nav>
+        </header>
+    <main style="display: flex; margin: 6.5rem 0 2rem 0; width: 98%; height: auto; min-height: 13cm;">
+            <div class='container-cc bg-info text-white rounded-lg text-center'>
+                <h1>Carbon Calculator</h1><br>
+                <h3>Berapa MPG mobil Anda?</h3>
+                <input id='mpg' type='number' placeholder='Masukkan MPG'/>
+                <h3>Berapa jarak total perjalanan? (dalam mil)</h3>
+                <input id='dist' type='number' placeholder='Masukkan Jarak'/>
+                <h3>Berapa kali perjalanan ini per minggu?</h3>
+                <input id='trips' type='number' placeholder='Masukkan Jumlah Perjalanan'/>
+                <br/>
+                <br/>
+                <button class='btn-secondary rounded-sm' onclick='calcCO2()'>Hitung Jejak Karbon</button>
+                <br/>
+                <br/>
+            </div>
+            <br/>
+            <aside>
+            <div class='container-cch text-center'>
+                <h2>Jejak Karbon Anda adalah:</h2>
+                <h2 id='result4' class='bg-success rounded-lg'></h2>
+                <h5>g CO2e / mil</h5>
+                <br/>
+                <h2>Jejak Karbon perjalanan ini adalah:</h2>
+                <h2 id='result' class='bg-success rounded-lg'></h2>
+                <h5>kg CO2e</h5>
+                <br/>
+                <h2>Jejak Karbon per minggu adalah:</h2>
+                <h2 id='result2' class='bg-success rounded-lg'></h2>
+                <h5>kg CO2e</h5>
+                <br/>
+                <h2>Jejak Karbon per tahun adalah:</h2>
+                <h2 id='result3' class='bg-success rounded-lg'></h2>
+                <h5>kg CO2e</h5>
+            </div>
+        </aside>
+    </main>
+        
+    <script src="assets/js/main.js"></script>
+    </body>
+</html>
