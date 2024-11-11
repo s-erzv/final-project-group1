@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Set active navigation link based on current path
     const currentPath = window.location.pathname.split("/").pop();
     const navLinks = document.querySelectorAll("nav ul li a");
 
@@ -9,9 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Manage active state for navigation items
-    const navItems = document.querySelectorAll('.nav-item');
+});
 
+    const navItems = document.querySelectorAll('.nav-item');
     navItems.forEach(item => {
         item.addEventListener('click', function () {
             navItems.forEach(navItem => navItem.classList.remove('active'));
@@ -44,34 +43,27 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     function showModal(modalId, contentId) {
-        // Mengambil elemen modal dan elemen konten
         const modal = document.getElementById('modal-' + modalId);
         const content = document.getElementById('modal-content-' + modalId);
     
-        // Mengambil elemen konten yang akan dimasukkan ke modal
         const sourceContent = document.getElementById(contentId).innerHTML;
         
-        // Mengisi modal dengan konten
         content.innerHTML = sourceContent;
-        
-        // Menampilkan modal
         modal.style.display = 'block';
     }
-    
+
     function closeModal(modalId) {
-        // Menyembunyikan modal
         document.getElementById('modal-' + modalId).style.display = 'none';
     }
-    
-    // Menutup modal saat klik di luar konten
+
     window.onclick = function (event) {
         const modalPenyebab = document.getElementById("modal-penyebab");
         const modalDampak = document.getElementById("modal-dampak");
     
         if (event.target === modalPenyebab) {
-            closeModal('modal-penyebab');
+            closeModal('penyebab');
         } else if (event.target === modalDampak) {
-            closeModal('modal-dampak');
+            closeModal('dampak');
         }
     };
 
@@ -99,69 +91,32 @@ document.addEventListener("DOMContentLoaded", () => {
         showSlide(currentIndex - 1);
     }
 
-    // API Key and base URL for weather data
-    const apiKey = "e94c47d77102e12b744c8f55001d7800";
-
-    const searchBar = document.querySelector(".search-bar");
-
-    // Event listener for Enter key to search city weather
-    searchBar.addEventListener("keypress", (event) => {
-        if (event.key === "Enter") {
-            const city = searchBar.value.trim();
-            if (city) {
-                fetchWeatherData(city);
-            }
+    function calcCO2() {
+        const mpg = parseFloat(document.getElementById('mpg').value);
+        const distance = parseFloat(document.getElementById('dist').value);
+        const trips = parseFloat(document.getElementById('trips').value);
+    
+        if (isNaN(mpg) || isNaN(distance) || isNaN(trips)) {
+            alert("Harap masukkan semua nilai yang dibutuhkan!");
+            return;
         }
-    });
-
-    // Fetch weather data function
-    async function fetchWeatherData(city) {
-        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-        try {
-            const response = await fetch(apiUrl);
-            if (!response.ok) throw new Error("City not found");
-
-            const data = await response.json();
-            updateDashboard({
-                temperature: `${data.main.temp}°C`,
-                description: data.weather[0].description,
-                uvIndex: "N/A",
-                windSpeed: `${data.wind.speed} km/h`,
-                sunrise: formatTime(data.sys.sunrise),
-                sunset: formatTime(data.sys.sunset),
-                humidity: `${data.main.humidity}%`,
-                visibility: `${data.visibility / 1000} km`,
-                airQuality: "N/A"
-            });
-        } catch (error) {
-            console.error("Error fetching weather data:", error);
-            alert("City not found. Please try again.");
-        }
+    
+        // Perhitungan emisi karbon per mil (g CO2 per mil)
+        const gramsCO2PerMile = 8887 / mpg; // Angka 8887 adalah konversi standar (gallons to grams of CO2)
+        
+        // Hasil per perjalanan (dalam kg CO2)
+        const totalTripCO2 = (gramsCO2PerMile * distance) / 1000;
+    
+        // Hasil per minggu (dalam kg CO2)
+        const weeklyCO2 = totalTripCO2 * trips;
+    
+        // Hasil per tahun (dalam kg CO2)
+        const yearlyCO2 = weeklyCO2 * 52;
+    
+        // Menampilkan hasil ke elemen HTML
+        document.getElementById('result4').innerText = gramsCO2PerMile.toFixed(2);
+        document.getElementById('result').innerText = totalTripCO2.toFixed(2);
+        document.getElementById('result2').innerText = weeklyCO2.toFixed(2);
+        document.getElementById('result3').innerText = yearlyCO2.toFixed(2);
     }
-
-    // Update weather dashboard function
-    function updateDashboard(data) {
-        document.querySelector(".temperature").textContent = data.temperature;
-        document.querySelector(".description").textContent = data.description;
-        document.querySelector(".uv-index .highlight-value").textContent = data.uvIndex;
-        document.querySelector(".wind-status .highlight-value").textContent = data.windSpeed;
-        document.querySelector(".sunrise-sunset .highlight-value").textContent = `${data.sunrise} - ${data.sunset}`;
-        document.querySelector(".humidity .highlight-value").textContent = data.humidity;
-        document.querySelector(".visibility .highlight-value").textContent = data.visibility;
-        document.querySelector(".air-quality .highlight-value").textContent = data.airQuality;
-    }
-
-    // Convert Unix time to readable format
-    function formatTime(unixTime) {
-        const date = new Date(unixTime * 1000);
-        const hours = date.getHours().toString().padStart(2, '0');
-        const minutes = date.getMinutes().toString().padStart(2, '0');
-        const period = hours >= 12 ? 'PM' : 'AM';
-        return `${hours % 12 || 12}:${minutes} ${period}`;
-    }
-
-    // Make showModal and closeModal available globally for onclick usage in HTML
-    window.showModal = showModal;
-    window.closeModal = closeModal;
-});
+    document.querySelector('button').addEventListener('click', calcCO2);

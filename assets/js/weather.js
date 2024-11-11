@@ -1,3 +1,4 @@
+
 const apiKey = '0f5c77ca49f24a4888515037241011';
 const weatherApp = document.getElementById('weather-app');
 
