@@ -80,11 +80,21 @@ nav ul li a.active {
 }
 
 .content h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     line-height: 1.2;
-    margin: 0 0 20px 1.5rem;
+    margin: 0 0 5px 1.5rem;
     color: white;
+    text-shadow: 2px 2px 2px #333333;
 }
+
+.content h2 {
+    font-size: 1.2rem;
+    margin:  0 0 0 1.5rem;
+    font-weight: 500;
+    color: white;
+    text-shadow: 2px 2px 2px #707070;
+}
+
 /* 
 .weather-widget {
     display: flex;
@@ -296,7 +306,12 @@ nav ul li a.active {
     margin: 2rem 0;
 }
 
-.carousel-container {
+.grafik img {
+    width: 95%;
+    height: auto;
+}
+
+/* .carousel-container {
     width: 80%;
     margin: auto;
     overflow: hidden;
@@ -333,7 +348,7 @@ nav ul li a.active {
 
 .next {
     right: 10px;
-}
+} */
 
 footer {
     background-color: white;
