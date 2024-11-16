@@ -522,6 +522,12 @@ footer p {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 .container-cch {
     width: 500px;
     min-height: 13.5cm;
