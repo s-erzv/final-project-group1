@@ -62,7 +62,7 @@
                 Perubahan iklim terjadi akibat peningkatan gas rumah kaca seperti CO2 dan metana dari aktivitas manusia, termasuk pembakaran bahan bakar fosil, peternakan, dan deforestasi. Pemanasan global telah menyebabkan suhu rata-rata naik 0,85°C sejak abad ke-19, dengan risiko bencana lingkungan meningkat. Siklus alami perubahan orbit Bumi juga turut memengaruhi iklim, walau dampaknya tidak secepat pengaruh aktivitas manusia.</h3>
             <div class="box-container-p">
                 <div class="box" onclick="showModal('penyebab', 'penyebab1')">Efek Rumah Kaca</div>
-                <div class="box" onclick="showModal('penyebab', 'penyebab2')">Peningkatan Emosi</div>
+                <div class="box" onclick="showModal('penyebab', 'penyebab2')">Peningkatan Emisi</div>
                 <div class="box" onclick="showModal('penyebab', 'penyebab3')">Pemanasan Global</div>
                 <div class="box" onclick="showModal('penyebab', 'penyebab4')">Perubahan Orbit Bumi</div>
             </div>
@@ -73,8 +73,11 @@
     <div id="modal-penyebab" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal('modal-penyebab')">&times;</span>
-            <h3>Penyebab Perubahan Iklim</h3>
-            <p id="modal-content-penyebab">Isi penyebab akan ditampilkan di sini.</p>
+            <img id="modal-image-penyebab" src=" " alt="Penyebab">
+            <div class="modal-text">
+                <h3 id="modal-title-penyebab" class="modal-title"></h3>
+                <p id="modal-content-penyebab">Isi penyebab akan ditampilkan di sini.</p>
+            </div>
         </div>
     </div>
     
@@ -102,8 +105,11 @@
     <div id="modal-dampak" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal('modal-dampak')">&times;</span>
-            <h3>Dampak Perubahan Iklim</h3>
-            <p id="modal-content-dampak">Isi dampak akan ditampilkan di sini.</p>
+            <img id="modal-image-dampak" src="" alt="Dampak">
+            <div class="modal-text">
+                <h3 id="modal-title-dampak" class="modal-title"></h3>
+                <p id="modal-content-dampak">Isi dampak akan ditampilkan di sini.</p>
+            </div>
         </div>
     </div>
     <!-- Dampak Perubahan Iklim section end -->
@@ -123,10 +129,11 @@
         </div> -->
      </div>
     <!-- Grafik section end -->
-  <footer>
-    <div class="logo-footer">Logo</div>
+</section>
+<footer>
     <p> Copyright &copy; 2024 Sky Solutions</p>
-    </footer>
+</footer>
     <script src="assets/js/main.js"></script>
+
 </body>
 </html>
