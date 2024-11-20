@@ -23,10 +23,8 @@ header {
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+    width: 50px;
     margin: 18px 0 0 2.5rem;
-    color: white;
 }
 
 nav ul {
@@ -153,6 +151,7 @@ nav ul li a.active {
     margin: 6rem 0 -40px 0;
     font-size: 3.3rem;
     text-align: left;
+    margin-bottom: 10px;
 }
 
 .ic h3, .pic h3, .dic h3 {
@@ -215,21 +214,19 @@ nav ul li a.active {
     justify-content: center;
 }
 
-
 .box-container-p {
     display: flex;
     gap: 30px;
-    margin-top: -80px;
+    margin-top: 10px;
 }
 
 .box-container-d {
     display: flex;
-    gap: 30px;
+    gap: 15px;
     margin-top: 20px;
-
 }
   
-.box {
+.box{
     padding: 20px;
     background-color: #fdfdfd;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
@@ -239,7 +236,12 @@ nav ul li a.active {
     border-radius: 5px;
     margin-top: 2rem;
 }
-  
+
+.box-d {
+    padding: 10px;
+    width: 100px;
+}
+
 .box:hover {
     transform: scale(1.1);
 }
@@ -266,6 +268,7 @@ nav ul li a.active {
 
 .modal-text {
     padding: 0 10px;
+    font-size: smaller;
 }
 
 .modal-content {
@@ -621,7 +624,7 @@ h1{
  }
 
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .content h1 {
         font-size: 2rem;
     }
@@ -633,4 +636,45 @@ h1{
     .weather-widget .location {
         font-size: 0.9rem;
     }
+} */
+
+@media screen and (max-width: 768px) {
+    *{
+        display: flex;
+    }
+    header {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ic, .dic, .pic {
+        flex-direction: column;
+    }
+
+    .content h1 {
+        font-size: 2rem;
+    }
+
+    .content h2 {
+        font-size: 0.9rem;
+    }
+
+    .ic h1, .dic h1, .pic h1 {
+        font-size: 2rem;
+    }
+
+    .ic h3, .pic h3, .dic h3 {
+        font-size: 0.9rem;
+    }
 }
+
+/* @media screen and (max-width: 768px){
+    .pic {
+        display: flex;
+        flex-direction: column;
+    }
+} */

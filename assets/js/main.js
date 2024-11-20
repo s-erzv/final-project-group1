@@ -23,72 +23,91 @@ document.addEventListener("DOMContentLoaded", () => {
     const contentData = {
     penyebab: {
         penyebab1: {
-            title :"Gas Rumah Kaca",
-            text: "Gas rumah kaca seperti karbon dioksida, metana, dan dinitrogen oksida memerangkap panas di atmosfer, meningkatkan suhu rata-rata Bumi melalui efek rumah kaca. Aktivitas manusia seperti pembakaran bahan bakar fosil dan deforestasi telah meningkatkan konsentrasi gas ini, menyebabkan perubahan iklim, naiknya permukaan laut, dan cuaca ekstrem.",
+            title :"Efek Rumah Kaca",
+            text: "Gas Rumah Kaca sebagai penyebab perubahan iklim pertama dan berasal dari gas-gas rumah kaca. Banyak dari gas-gas ini terjadi secara alami, meski berbagai aktivitas manusia disekitarnya meningkatkan konsentrasinya di atmosfer, khususnya pada metana, karbon dioksida , gas berfluorinasi CO2 dan dinitrogen oksida sebagai gas rumah kaca yang paling umum diproduksi oleh aktivitas manusia serta bertanggung jawab atas 64% pemanasan global buatan manusia. Metana ini bertanggung jawab atas nitro oksida sebesar 6% dan 17% pemanasan global buatan manusia.",
             image: "assets/img/penyebab/penyebab1.jpeg"
         },
         penyebab2: {
             title :"Peningkatan Emisi",
-            text: "Emisi dari pembakaran bahan bakar fosil dan industri menambah jumlah CO₂ dan gas lainnya di atmosfer. Gas-gas ini memerangkap panas, meningkatkan suhu global, dan menyebabkan perubahan iklim serta cuaca ekstrem. Upaya untuk mengurangi emisi sangat penting untuk memitigasi dampak negatifnya.",
+            text: "Penyebab perubahan iklim yang kedua berasal dari peningkatan emisi yang diakibatkan oleh ulah manusia, misalnya saja pada Pembakaran minyak, batu bara, dan gas yang akan menghasilkan dinitrogen oksida dan karbon dioksida. Pohon sendiri membantu mengatur iklim dengan menyerap CO2 dari atmosfer. Selain itu peningkatan emisi juga disebabkan oleh meningkatnya jumlah peternakan, khususnya pada Sapi dan domba, dimana keduanya menghasilkan metana dalam jumlah besar saat mencerna makanan.",
             image: "assets/img/penyebab/penyebab2.jpeg"
         },
         penyebab3: {
             title :"Pemanasan Global",
-            text: "Suhu rata-rata global meningkat lebih dari 0,85°C sejak akhir abad ke-19, dipicu oleh aktivitas manusia. Emisi gas rumah kaca dari pembakaran bahan bakar fosil, deforestasi, dan kegiatan industri adalah penyebab utama pemanasan ini. Peningkatan suhu global ini telah mencairkan lapisan es di kutub, menaikkan permukaan laut, dan mengubah pola cuaca.",
+            text: "Penyebab perubahan iklim lainnya berasal dari aktivitas pemanasan global. Suhu rata-rata global saat ini sendiri adalah 0,85C lebih tinggi jika dibandingkan dengan akhir abad ke-19. Para ilmuwan iklim terkemuka mengemukakan pendapatnya mengenai penyebab pemanasan global adalah aktivitas manusia. Di mana kemudian terdapat risiko yang jauh lebih tinggi bahwa perubahan yang berbahaya serta berbagai bencana di lingkungan global kemungkinan akan terjadi.",
             image: "assets/img/penyebab/penyebab3.jpeg"
         },
         penyebab4: {
             title :"Perubahan Orbit Bumi",
-            text: "Siklus alami perubahan orbit Bumi dapat memengaruhi iklim, meskipun pengaruhnya tidak secepat aktivitas manusia. Variasi dalam eksentrisitas, kemiringan sumbu, dan presesi Bumi terjadi dalam rentang waktu ribuan hingga ratusan ribu tahun dan berkontribusi pada perubahan iklim jangka panjang seperti zaman es.",
+            text: "Penyebab terjadinya perubahan iklim selanjutnya berasal dari orbit bumi yang mengalami perubahan. Dalam 800.000 tahun terakhir, terdapat siklus alami dalam iklim Bumi di antara zaman es serta periode interglasial yang lebih hangat. Orbit bumi yang berada di sekitar matahari adalah lingkaran bukannya elips. Kadang ia hampir melingkar dimana jarak Bumi berada kira-kira sama dari Matahari saat ia bergerak mengelilingi orbitnya. Pada waktu lainnya elips lebih menonjol hingga Bumi bergerak lebih dekat dan jauh dari matahari saat mengorbit. Saat Bumi lebih dekat ke matahari sendiri, iklim kemudian akan menjadi lebih hangat.",
             image: "assets/img/penyebab/penyebab4.jpeg"
         }
     },
     dampak: {
         dampak1: {
-            title :"Menurunnya Kualitas Air",
-            text: "Curah hujan tinggi dapat menurunkan kualitas air dengan membawa polutan dan sedimen ke dalam sumber air, meningkatkan risiko kontaminasi. Selain itu, peningkatan suhu mempengaruhi kadar klorin dalam air, mengurangi efektivitasnya sebagai desinfektan dan memungkinkan pertumbuhan mikroorganisme berbahaya.",
+            title :"Kepunahan Ekosistem",
+            text: "Kemungkinan terjadinya kepunahan ekosistem yaitu pada spesies hewan dan tumbuhan adalah 20-30 persen hal ini terjadi jika bertambah CO2 di atmosfer serta kenaikan suhu rata-rata global sebanyak 1,5-2,5 derajat Celcius, yang kemudian akan turut meningkatkan tingkat keasaman laut. Hal ini kemudian akan berdampak negatif terhadap para organisme-organisme laut seperti misalnya pada terumbu karang, hingga berbagai spesies yang hidupnya bergantung terhadap organisme tersebut.",
             image: "assets/img/dampak/dampak1.jpeg"
         },
         dampak2: {
-            title :"Berkurangnya Kuantitas Air",
-            text: "Curah hujan tinggi bisa menyebabkan air cepat kembali ke laut tanpa tersimpan sebagai air bersih. Aliran permukaan yang cepat ini mengurangi kesempatan air untuk meresap ke dalam tanah dan mengisi kembali akuifer, sehingga mengurangi ketersediaan air tawar.",
+            title :"Pangan dan Hasil Hutan",
+            text: "Diperkirakan produktivitas pertanian yang berada di daerah tropis akan mengalami penurunan jika terjadi kenaikan suhu rata-rata global di antara 1-2 derajat Celcius, hingga kemudian meningkatkan resiko bencana kelaparan.Meningkatnya frekuensi banjir serta kekeringan kemudian akan memberi dampak buruk terhadap  produksi lokal utamanya pada penyediaan pangan pada area tropis dan subtropis. Jika perubahan iklim kemudian terjadi, maka hasil panen akan turut menurun pula, baik dari segi kuantitas maupun kualitas. Berbagai dampak perubahan iklim ini juga dibahas pada buku Educomics Plants Vs Zombies: Cuaca Dan Iklim yang dikemas melalui ilustrasi sehingga lebih mudah dimengerti.",
             image: "assets/img/dampak/dampak2.jpeg"
         },
         dampak3: {
-            title :"Perubahan Habitat",
-            text: "anjir dan badai mengubah habitat alami, membahayakan berbagai spesies makhluk hidup. Peristiwa cuaca ekstrem ini dapat merusak ekosistem, menghancurkan tempat tinggal, sumber makanan, dan mengganggu pola migrasi hewan. Akibatnya, banyak spesies menghadapi risiko kepunahan jika mereka tidak dapat beradaptasi dengan cepat.",
+            title :"Pesisir dan Dataran Rendah",
+            text: "Daerah pantai akan kian rentan terhadap naiknya permukaan air laut dan erosi pantai. Kerusakan pesisir ini sendiri kemudian akan diperparah oleh berbagai tekanan manusia di daerah pesisir. Diperkirakan pada tahun 2080 nanti sekitar jutaan orang akan terkena banjir setiap tahun diakibatkan oleh naiknya permukaan air laut. Resiko terbesar yang akan dihadapi adalah padat penduduknya area di dataran rendah dengan tingkat adaptasi yang rendah. Selain itu sesungguhnya penduduk yang paling terancam ialah yang berada di Afrika dan delta-delta Afrika, Asia serta para penduduk yang bermukim di pulau-pulau kecil.",
             image: "assets/img/dampak/dampak3.jpeg"
         },
         dampak4: {
-            title :"Punahnya Spesies",
-            text: "Perubahan suhu dan lingkungan yang cepat menyebabkan kepunahan beberapa spesies yang tak sempat beradaptasi. Peningkatan suhu global, perubahan pola cuaca, dan kerusakan habitat akibat aktivitas manusia memaksa banyak spesies untuk menghadapi kondisi yang tidak sesuai dengan kebutuhan hidup mereka.",
+            title :"Sumber dan Manajemen Air Tawar",
+            text: "Hingga saat ini rata-rata ketersediaan air di daerah subpolar, aliran air sungai dan daerah tropis basah diperkirakan akan mengalami peningkatkan sekitar 10-40 persen. Sementara pada daerah subtropis dan daerah tropis yang kering, air kemudian akan mengalami pengurangan sekitar 10-30% hingga akhirnya berbagai daerah yang kini mengalami kekeringan kemudian akan semakin menjadi parah kondisinya.",
             image: "assets/img/dampak/dampak4.jpeg"
         },
         dampak5: {
-            title :"Meningkatnya Wabah Penyakit",
-            text: "Curah hujan tinggi memicu peningkatan wabah seperti malaria dan demam berdarah. Genangan air yang terbentuk setelah hujan deras menjadi tempat berkembang biak yang ideal bagi nyamuk, yang merupakan vektor utama penyakit-penyakit ini. Peningkatan populasi nyamuk meningkatkan risiko penularan penyakit kepada manusia, terutama di daerah tropis dan subtropis.",
+            title :"Industri, Permukiman dan Masyarakat",
+            text: "Industri, permukiman serta masyarakat yang kian rentan umumnya berada di daerah bantaran sungai dan pesisir serta mereka yang tingkat perekonomiannya terkait erat dengan keberadaan sumber daya yang sensitif terhadap iklim, juga ia yang tinggal di daerah-daerah yang sering dilanda berbagai bencana ekstrim, dimana urbanisasi biasanya kemudian berlangsung dengan sangat cepat. Komunitas dengan ekonomi kebawah sendiri sangat rentan karena kapasitas adaptasi yang mereka miliki terbatas, dan kehidupannya yang sangat tergantung pada sumberdaya, dimana Sumber Daya ini keberadaannya sangat mudah terpengaruh oleh iklim dan persediaan makanan juga air. Temukan pula pembahasan lebih lanjutnya pada buku Kebijakan Fiskal, Perubahan Iklim, dan Keberlanjutan Pembangunan",
+            image: "assets/img/dampak/dampak5.jpeg"
+        },
+        dampak6: {
+            title :"Kesehatan",
+            text: "Penduduk yang kapasitas beradaptasinya rendah akan kian rentan terhadap berbagai penyakit yang melanda, umumnya adalah gizi buruk, diare, dan berubahnya pola distribusi pada penyakit-penyakit yang ditularkan dari berbagai hewan khususnya serangga.",
             image: "assets/img/dampak/dampak5.jpeg"
         }
     },
     tips: {
         Tips1: {
-            title: "Efek Gas Rumah Kaca",
-            text: "Menghemat Energi: Kurangi penggunaan energi untuk mengurangi emisi gas rumah kaca.",
-            image: "assets/img/energy-save.png"
+            title: "Mengurangi Konsumsi Energi",
+            text: "Berjalan Kaki atau Bersepeda: Mengurangi emisi kendaraan sekaligus menyehatkan.",
+            image: "assets/img/bicycle.png"
         },
         Tips2: {
+            title: "Mengurangi Konsumsi Energi",
             text: "Berjalan Kaki atau Bersepeda: Mengurangi emisi kendaraan sekaligus menyehatkan.",
             image: "assets/img/bicycle.png"
         },
         Tips3: {
+            title: "Mengurangi Konsumsi Energi",
             text: "Konsumsi Lebih Banyak Sayuran: Produksi sayuran lebih ramah lingkungan daripada daging dan susu.",
             image: "assets/img/vegetables.png"
         },
         Tips4: {
+            title: "Mengurangi Konsumsi Energi",
             text: "Kurangi Penggunaan Pesawat: Mengurangi emisi dengan mengurangi perjalanan udara.",
             image: "assets/img/airplane.png"
         },
         Tips5: {
+            title: "Mengurangi Konsumsi Energi",
+            text: "Daur Ulang dan Kurangi Limbah: Kurangi pembelian barang baru, perbaiki dan daur ulang barang yang bisa digunakan kembali.",
+            image: "assets/img/recycle.png"
+        },
+        Tips6: {
+            title: "Mengurangi Konsumsi Energi",
+            text: "Daur Ulang dan Kurangi Limbah: Kurangi pembelian barang baru, perbaiki dan daur ulang barang yang bisa digunakan kembali.",
+            image: "assets/img/recycle.png"
+        },
+        Tips7: {
+            title: "Mengurangi Konsumsi Energi",
             text: "Daur Ulang dan Kurangi Limbah: Kurangi pembelian barang baru, perbaiki dan daur ulang barang yang bisa digunakan kembali.",
             image: "assets/img/recycle.png"
         }
