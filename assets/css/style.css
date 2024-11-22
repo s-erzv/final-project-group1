@@ -139,7 +139,7 @@ nav ul li a.active {
     color: #233A25;
 } */
 
-.ic, .dic {
+.ic{
     display: flex;
     align-items: center;
     padding: 2rem 3rem;
@@ -184,7 +184,6 @@ nav ul li a.active {
 }
 
 .pic {
-    text-align: center;
     display: flex;
     max-width: 98%;
     width: 98%;
@@ -203,9 +202,16 @@ nav ul li a.active {
     margin: 0 -25px 0 25px;
 }
 
-.pic-desc, .dic-desc {
+/* .pic-desc, .dic-desc {
     display: grid;
     float: right;
+    padding-right: 5.5rem;
+    margin-bottom: 5rem;
+} */
+
+.pic-desc, .dic-desc {
+    display: flex;
+    flex-direction: column;
     padding-right: 5.5rem;
     margin-bottom: 5rem;
 }
@@ -230,15 +236,18 @@ nav ul li a.active {
 }
 
 .box-container-p {
+    text-align: center;
     display: flex;
     gap: 30px;
     margin-top: 10px;
+    flex-wrap: wrap;
 }
 
 .box-container-d {
     display: flex;
     gap: 15px;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
   
 .box{
@@ -256,12 +265,16 @@ nav ul li a.active {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    max-width: 200px;
+    max-width: 160px;
+}
+
+.box-p img{
+    padding-right: 2rem;
 }
 
 .box-d {
     padding: 10px;
-    max-width: 120px;
+    max-width: 100px;
 }
 
 .box-tips{
@@ -343,7 +356,6 @@ nav ul li a.active {
 }
 
 .dic {
-    text-align: center;
     display: flex;
     max-width: 98%;
     width: 98%;
@@ -658,8 +670,10 @@ h1{
     margin: 20px 0 0 0;
  }
   
-@media (max-width: 768px) {
-
+@media (max-width: 900px) {
+    nav{
+        display: none;
+    }
     header {
         flex-direction: column;
         align-items: flex-start;
@@ -669,15 +683,13 @@ h1{
         margin: 10px 0;
     }
 
-    nav ul {
-        align-items: flex-start;
-        margin: 0;
-        width: fit-content;
+    .pic-desc, .dic-desc {
+        flex-direction: column;
+        padding-right: 0;
     }
 
-    nav ul li {
-        size: 10%;
-        margin: 5px 0;
+    .ic{
+        padding-left: 0;
     }
 
     .hero {
@@ -694,20 +706,44 @@ h1{
         font-size: 1.2rem;
     }
 
-    .ic, .dic, .pic {
+    .ic{
+        padding: 0;
+        margin: 0;
+    }
+
+    .ic, .dic{
         flex-direction: column;
-        align-items: center;
-        margin-left: 0;
-        justify-content: center;
+        padding: 2rem;
+    }
+
+    .pic{
+        padding: 0;
+        flex-direction: column;
+    }
+
+    .pic-desc{
+        padding: 2rem;
     }
 
     .ic, .dic {
-        margin-left: 0rem;
+        align-items: start;
+        justify-content: start;
+    }
+
+    .pic img{
+        align-self: flex-end;
+        padding: 0;
+        margin: 0;
+        width: 98%;
+    }
+
+    .pic h1 {
+        margin-top: 1rem;
     }
 
     .ic img, .dic img, .pic img {
         width: 100%;
-        max-width: 300px; /* Adjust max width for smaller screens */
+        max-width: 300px;
         margin: 0;
     }
 
@@ -737,6 +773,10 @@ h1{
         overflow: hidden;
     }
 
+    .box-p img{
+        padding-right: 0;
+    }
+
     .tips h1 {
         font-size: 2rem;
     }
@@ -760,7 +800,11 @@ h1{
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 488px) {
+    .logo{
+        display: none;
+    }
+
     .content h1 {
         font-size: 2rem;
     }
