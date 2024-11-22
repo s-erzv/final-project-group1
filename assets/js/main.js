@@ -1,15 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
     const currentPath = window.location.pathname.split("/").pop();
     const navLinks = document.querySelectorAll("nav ul li a");
-
+ 
     navLinks.forEach(link => {
         if (link.getAttribute("href") === currentPath) {
             link.classList.add("active");
         }
     });
-
+ 
 });
-
+ 
     const navItems = document.querySelectorAll('.nav-item');
     navItems.forEach(item => {
         item.addEventListener('click', function () {
@@ -186,6 +186,7 @@ window.onclick = function(event) {
     // function prevSlide() {
     //     showSlide(currentIndex - 1);
     // }
+
 
     function calcCO2() {
         const mpg = parseFloat(document.getElementById('mpg').value);

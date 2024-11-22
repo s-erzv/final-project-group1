@@ -1,0 +1,372 @@
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #233A25;
+}
+
+/* Header & Navigation */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;  
+    margin: 18px 0 0 2.5rem;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+}
+
+.logo h2 {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.navbar-desktop ul {
+    list-style: none;
+    display: flex;
+    gap: 5px;
+    margin: 18px 2.5rem 0 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 5px;
+}
+
+
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.5rem 1.5rem;
+    transition: all 0.5s ease-in-out;
+    border-radius: 999px;
+}
+
+nav ul li a:hover {
+    background-color: white;
+    color: #233A25;
+}
+nav ul li a.active {
+    background-color: white;
+    color: #233A25;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 95%;
+    height: auto;
+    min-height: 400px;
+    min-height: 15.7cm;
+    border-radius: 15px;
+    display: flex;
+    justify-content: left;
+    margin: 20px 0 0 35px ;
+    align-items: center;
+    background-image: url('../img/landscape.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.content {
+    max-width: 700px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.content h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin: 0 0 5px 1.5rem;
+    color: white;
+    text-shadow: 2px 2px 2px #333333;
+}
+
+.content h2 {
+    font-size: 1.2rem;
+    margin: 0 0 0 1.5rem;
+    font-weight: 500;
+    color: white;
+    text-shadow: 2px 2px 2px #707070;
+}
+
+/* Tips Section */
+.tips {
+    min-height: 13cm;
+    padding: 2rem;
+}
+
+.tips h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 8rem;
+    margin-bottom: 2rem;
+}
+
+.box-container-tips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    padding: 0 2rem;
+}
+
+.box-tips {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fdfdfd;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border: 1px solid rgb(216, 216, 216);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.box-tips:hover {
+    transform: scale(1.1);
+}
+
+.box-tips img {
+    width: 6rem;
+    height: auto;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: justify;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+}
+
+.modal-text {
+margin: 0 0 0 10px;
+}
+
+.modal-content img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.modal-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.close-btn:hover {
+    color: black;
+}
+
+/* Footer */
+footer {
+    background-color: white;
+    border-top: 1px solid rgb(148, 148, 148);
+    padding: 10px 15px;
+    display: flex;
+    justify-content: center;
+    gap: 57rem;
+    margin: 3rem 0 0 0;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    .navbar-desktop {
+        display: none;
+    }
+
+    .navbar-mobile {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+    }
+
+    #mobile-menu {
+        position: fixed;
+        top: 0;
+        left: -300px;
+        width: 250px;
+        height: 100%;
+        background-color:#233A25;
+        transition: left 0.3s ease-in-out;
+        padding-top: 80px;
+        z-index: 99;
+    }
+
+    #mobile-menu.active {
+        left: 0;
+    }
+
+    #mobile-menu ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #mobile-menu ul li {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    #mobile-menu ul li a {
+        display: block;
+        width: 100%;
+        color: white;
+        text-decoration: none;
+    }
+
+    #mobile-menu ul li a:hover,
+    #mobile-menu ul li a.active {
+        background-color: white;
+        color: #233A25;
+    }
+
+    .menu-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 98;
+        display: none;
+    }
+
+    .menu-overlay.active {
+        display: block;
+    }
+
+    .close-menu {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+
+    .close-menu::before,
+    .close-menu::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .close-menu::after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    .hero {
+        width: 90%;
+        min-height: 300px;
+        margin: 10px auto;
+    }
+
+    .content h1 {
+        font-size: 1.5rem;
+        margin: 0 0 10px 1rem;
+    }
+
+    .content h2 {
+        font-size: 0.87rem;
+        margin: 0 0 0 1rem;
+    }
+
+    .tips h1 {
+        font-size: 2rem;
+        margin-top: 4rem;
+    }
+
+    .box-container-tips {
+        padding: 0 1rem;
+    }
+
+    .logo {
+        display: fixed;
+        align-items: center;
+        gap: 2px;  
+        margin: 10px 0 0 1.5rem;
+    }
+    
+    .logo img {
+        width: 40px;
+        height: auto;
+    }
+    
+    .logo h2 {
+        font-size: 1rem;
+        color: white;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .navbar-mobile {
+        display: none;
+    }
+}
