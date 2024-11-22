@@ -19,12 +19,24 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 10;
+    z-index: 10
 }
 
 .logo {
-    width: 50px;
+    display: flex;
+    flex-direction: row;
     margin: 18px 0 0 2.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo h2{
+    color: white;
+    font-size: 20px;
+}
+
+#pic-logo {
+    width: 60px;
 }
 
 nav ul {
@@ -58,6 +70,7 @@ nav ul li a.active {
     position: relative;
     width: 95%;
     height: auto;
+    min-height: 400px;
     min-height: 15.7cm;
     border-radius: 15px;
     display: flex;
@@ -209,6 +222,8 @@ nav ul li a.active {
 
 .box-container-tips {
     display: flex;
+    flex-wrap: wrap;
+    overflow-y: hidden;
     gap: 30px;
     align-items: center;
     justify-content: center;
@@ -227,7 +242,6 @@ nav ul li a.active {
 }
   
 .box{
-    padding: 20px;
     background-color: #fdfdfd;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     border: 1px solid rgb(216, 216, 216);
@@ -237,9 +251,31 @@ nav ul li a.active {
     margin-top: 2rem;
 }
 
+.box-p {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 200px;
+}
+
 .box-d {
     padding: 10px;
-    width: 100px;
+    max-width: 120px;
+}
+
+.box-tips{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    text-align: center;
+    height: 200px;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .box:hover {
@@ -264,6 +300,7 @@ nav ul li a.active {
     font-weight: 600;
     color: #333;
     margin-bottom: 10px;
+    text-align: left;
 }
 
 .modal-text {
@@ -320,11 +357,9 @@ nav ul li a.active {
     text-align: center;
     max-width: 98%;
     width: 98%;
-    padding: 0 0 2rem 6rem;
     height: auto;
     margin-top: 2rem;
     min-height: 16cm;
-
 }
 
 .grafik h1 {
@@ -622,59 +657,131 @@ input[type="number"]::-webkit-inner-spin-button{
 h1{
     margin: 20px 0 0 0;
  }
+  
+@media (max-width: 768px) {
 
-
-/* @media (max-width: 768px) {
-    .content h1 {
-        font-size: 2rem;
-    }
-
-    .weather-widget .temp {
-        font-size: 2rem;
-    }
-
-    .weather-widget .location {
-        font-size: 0.9rem;
-    }
-} */
-
-@media screen and (max-width: 768px) {
-    *{
-        display: flex;
-    }
     header {
         flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        margin: 10px 0;
     }
 
     nav ul {
-        flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
+        margin: 0;
+        width: fit-content;
+    }
+
+    nav ul li {
+        size: 10%;
+        margin: 5px 0;
+    }
+
+    .hero {
+        margin: 10px;
+        padding: 10px;
+        min-height: 300px;
+    }
+
+    .content h1 {
+        font-size: 2.5rem;
+    }
+
+    .content h3 {
+        font-size: 1.2rem;
     }
 
     .ic, .dic, .pic {
         flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+        justify-content: center;
     }
 
+    .ic, .dic {
+        margin-left: 0rem;
+    }
+
+    .ic img, .dic img, .pic img {
+        width: 100%;
+        max-width: 300px; /* Adjust max width for smaller screens */
+        margin: 0;
+    }
+
+    .ic-desc, .dic-desc, .pic-desc {
+        text-align: center;
+    }
+
+    .box-container-p, .box-container-d {
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .box-d{
+        width: 125px;
+        height: 125px;
+        margin: 5px 0;
+        font-size: 1 rem;
+        overflow: hidden;
+    }
+
+    .box-p{
+        width: 125px;
+        height: 200px;
+        margin: 5px 0;
+        font-size: 1 rem;
+        overflow: hidden;
+    }
+
+    .tips h1 {
+        font-size: 2rem;
+    }
+
+    .grafik img {
+        width: 100%;
+        max-width: 500px; /* Adjust max width for smaller screens */
+    }
+
+    footer {
+        text-align: center;
+        padding: 10px;
+    }
+
+    .modal{
+        width: 100%;
+    }
+
+    .modal-content{
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
     .content h1 {
         font-size: 2rem;
     }
 
-    .content h2 {
-        font-size: 0.9rem;
+    .content h3 {
+        font-size: 1rem;
     }
 
-    .ic h1, .dic h1, .pic h1 {
-        font-size: 2rem;
+    .modal-title {
+        font-size: 20px;
     }
 
-    .ic h3, .pic h3, .dic h3 {
-        font-size: 0.9rem;
+    .modal-text {
+        font-size: smaller;
+    }
+
+    .close-btn {
+        font-size: 24px;
+    }
+
+    .hero {
+        min-height: 200px;
     }
 }
-
-/* @media screen and (max-width: 768px){
-    .pic {
-        display: flex;
-        flex-direction: column;
-    }
-} */

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sky Solutions</title>
 
     <!-- CSS -->
@@ -14,7 +16,10 @@
 <body>
     <section>
     <header>
-        <img class="logo" src="assets/img/Logo-White.png"/>
+        <div class="logo">
+            <img id="pic-logo" src="assets/img/Logo-White.png"/>
+            <h2>Sky Solutions</h2>
+        </div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -61,16 +66,16 @@
             <h3>
                 Perubahan iklim terjadi akibat peningkatan gas rumah kaca seperti CO2 dan metana dari aktivitas manusia, termasuk pembakaran bahan bakar fosil, peternakan, dan deforestasi. Pemanasan global telah menyebabkan suhu rata-rata naik 0,85°C sejak abad ke-19, dengan risiko bencana lingkungan meningkat. Siklus alami perubahan orbit Bumi juga turut memengaruhi iklim, walau dampaknya tidak secepat pengaruh aktivitas manusia.</h3>
             <div class="box-container-p">
-                <div class="box" onclick="showModal('penyebab', 'penyebab1')">Efek Rumah Kaca
-                    <img src="assets/img/penyebab/box-penyebab1.png"/>
+                <div class="box box-p" onclick="showModal('penyebab', 'penyebab1')">Efek Rumah Kaca
+                    <img src="assets/img/penyebab/box-penyebab1.png">
                 </div>
-                <div class="box" onclick="showModal('penyebab', 'penyebab2')">Peningkatan Emisi
+                <div class="box box-p" onclick="showModal('penyebab', 'penyebab2')">Peningkatan Emisi
                     <img src="assets/img/penyebab/box-penyebab2.png"/>
                 </div>
-                <div class="box" onclick="showModal('penyebab', 'penyebab3')">Pemanasan Global
+                <div class="box box-p" onclick="showModal('penyebab', 'penyebab3')">Pemanasan Global
                     <img src="assets/img/penyebab/box-penyebab3.png"/>
                 </div>
-                <div class="box" onclick="showModal('penyebab', 'penyebab4')">Perubahan Orbit Bumi
+                <div class="box box-p" onclick="showModal('penyebab', 'penyebab4')">Perubahan Orbit Bumi
                     <img src="assets/img/penyebab/box-penyebab4.png"/>
                 </div>
             </div>
@@ -126,7 +131,7 @@
     <div id="modal-dampak" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal('modal-dampak')">&times;</span>
-            <img id="modal-image-dampak" src="" alt="Dampak">
+            <img id="modal-image-dampak" src=" " alt="Dampak">
             <div class="modal-text">
                 <h3 id="modal-title-dampak" class="modal-title"></h3>
                 <p id="modal-content-dampak">Isi dampak akan ditampilkan di sini.</p>

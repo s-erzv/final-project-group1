@@ -72,44 +72,44 @@ document.addEventListener("DOMContentLoaded", () => {
         dampak6: {
             title :"Kesehatan",
             text: "Penduduk yang kapasitas beradaptasinya rendah akan kian rentan terhadap berbagai penyakit yang melanda, umumnya adalah gizi buruk, diare, dan berubahnya pola distribusi pada penyakit-penyakit yang ditularkan dari berbagai hewan khususnya serangga.",
-            image: "assets/img/dampak/dampak5.jpeg"
+            image: "assets/img/dampak/dampak6.jpeg"
         }
     },
     tips: {
         Tips1: {
             title: "Mengurangi Konsumsi Energi",
-            text: "Berjalan Kaki atau Bersepeda: Mengurangi emisi kendaraan sekaligus menyehatkan.",
-            image: "assets/img/bicycle.png"
+            text: "<ul> <li><b>Gunakan energi terbarukan:</b> Pasang panel surya atau pilih penyedia listrik yang menawarkan energi terbarukan.</li> <li> <b>Efisiensi listrik:</b> Matikan lampu, peralatan elektronik, dan perangkat lain saat tidak digunakan.</li> <li><b>Gunakan peralatan hemat energi:</b> Pilih produk dengan label hemat energi seperti Energy Star.</li> <li><b>Isolasi rumah:</b> Pastikan rumah memiliki isolasi yang baik untuk mengurangi penggunaan AC atau pemanas.</li> </ul>",
+            image: "assets/img/tips/tips1.jpeg"
         },
         Tips2: {
-            title: "Mengurangi Konsumsi Energi",
-            text: "Berjalan Kaki atau Bersepeda: Mengurangi emisi kendaraan sekaligus menyehatkan.",
-            image: "assets/img/bicycle.png"
+            title: "Transportasi Berkelanjutan",
+            text: "<ul><li><b>Kurangi penggunaan kendaraan pribadi:</b> Gunakan transportasi umum, bersepeda, atau berjalan kaki.</li><li><b>Berbagi kendaraan:</b> Manfaatkan aplikasi berbagi kendaraan atau tumpangan.</li><li><b>Pilih kendaraan listrik:</b> ika memungkinkan, gunakan kendaraan berbasis listrik atau hybrid.</li><li><b>Kurangi penerbangan:</b> Pilih perjalanan darat untuk jarak dekat, dan gunakan maskapai yang memiliki program keberlanjutan.</li></ul>",
+            image: "assets/img/tips/tips2.jpeg"
         },
         Tips3: {
-            title: "Mengurangi Konsumsi Energi",
-            text: "Konsumsi Lebih Banyak Sayuran: Produksi sayuran lebih ramah lingkungan daripada daging dan susu.",
-            image: "assets/img/vegetables.png"
+            title: "Konsumsi Makanan Ramah Lingkungan",
+            text: "<ul><li><b>Kurangi konsumsi daging dan produk hewani:</b> Produksi daging memiliki jejak karbon yang tinggi.</li><li><b>Pilih makanan lokal dan musiman:</b> Mengurangi emisi dari transportasi makanan.</li><li><b>Kurangi limbah makanan:</b> Simpan makanan dengan benar dan gunakan sisa makanan.</li><li><b>Dukung pertanian berkelanjutan:</b> Beli dari petani lokal yang menerapkan metode ramah lingkungan.</li></ul>",
+            image: "assets/img/tips/tips3.jpeg"
         },
         Tips4: {
-            title: "Mengurangi Konsumsi Energi",
-            text: "Kurangi Penggunaan Pesawat: Mengurangi emisi dengan mengurangi perjalanan udara.",
-            image: "assets/img/airplane.png"
+            title: "Pengelolaan Limbah",
+            text: "<ul><li><b>Daur ulang:</b> Pisahkan sampah untuk mendukung proses daur ulang.</li><li><b>Kurangi penggunaan plastik sekali pakai:</b> Gunakan tas belanja kain, botol minum, dan sedotan yang dapat digunakan kembali.</li><li><b>Kompos organik:</b> Ubah limbah organik menjadi pupuk kompos.</li><li><b>Donasi barang</b> Sumbangkan barang bekas daripada membuangnya.</li></ul>",
+            image: "assets/img/tips/tips4.jpeg"
         },
         Tips5: {
-            title: "Mengurangi Konsumsi Energi",
-            text: "Daur Ulang dan Kurangi Limbah: Kurangi pembelian barang baru, perbaiki dan daur ulang barang yang bisa digunakan kembali.",
-            image: "assets/img/recycle.png"
+            title: "Pelestarian Sumber Daya",
+            text: "<ul><li><b>Hemat air:</b> Perbaiki keran yang bocor, gunakan shower hemat air, dan kumpulkan air hujan untuk menyiram tanaman.</li><li><b>Dukung konservasi hutan:</b> Tanam pohon, dukung program reforestasi, atau adopsi area hutan.</li><li><b>Kurangi penggunaan kertas:</b> Gunakan media digital untuk menggantikan kertas.</li></ul>",
+            image: "assets/img/tips/tips5.jpeg"
         },
         Tips6: {
-            title: "Mengurangi Konsumsi Energi",
-            text: "Daur Ulang dan Kurangi Limbah: Kurangi pembelian barang baru, perbaiki dan daur ulang barang yang bisa digunakan kembali.",
-            image: "assets/img/recycle.png"
+            title: "Meningkatkan Kesadaran dan Advokasi",
+            text: "<ul><li><b>Edukasi diri dan orang lain:</b> Pelajari lebih lanjut tentang perubahan iklim dan cara mengatasinya.</li><li><b>Dukung kebijakan ramah lingkungan:</b> Pilih pemimpin atau organisasi yang peduli dengan keberlanjutan.</li><li><b>Bergabung dengan komunitas:</b> Ikut serta dalam program lingkungan lokal atau global.</li></ul>",
+            image: "assets/img/tips/tips6.jpeg"
         },
         Tips7: {
-            title: "Mengurangi Konsumsi Energi",
-            text: "Daur Ulang dan Kurangi Limbah: Kurangi pembelian barang baru, perbaiki dan daur ulang barang yang bisa digunakan kembali.",
-            image: "assets/img/recycle.png"
+            title: "Mendukung Inovasi dan Teknologi",
+            text: "<ul><li><b>Investasi dalam teknologi hijau:</b> Dukung perusahaan atau inisiatif yang berfokus pada solusi berkelanjutan.</li><li><b>Adopsi solusi digital:</b> Kurangi perjalanan fisik dengan memanfaatkan konferensi virtual.</li></ul>",
+            image: "assets/img/tips/tips7.jpeg"
         }
     }
 };
@@ -136,7 +136,7 @@ function showModal(type, key) {
     }
 
     document.getElementById(titleId).innerText = content.title;
-    document.getElementById(contentId).innerText = content.text;
+    document.getElementById(contentId).innerHTML = content.text;
     document.getElementById(imageId).src = content.image;
     document.getElementById(modalId).style.display = "flex";
     document.body.style.overflow = "hidden";
