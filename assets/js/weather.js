@@ -9,39 +9,39 @@ function setBackground(condition) {
     condition = condition.toLowerCase();
 
     if (condition.includes('rain')) {
-        bgImage = 'assets/img/rain.jpg';
+        bgImage = 'assets/img/weather/rain.jpg';
     }
 
     if (condition.includes('cloudy') || condition.includes('partly cloudy')) {
-        bgImage = 'assets/img/clouds.jpg';
+        bgImage = 'assets/img/weather/clouds.jpg';
     }
 
     if (condition.includes('clear')) {
-        bgImage = 'assets/img/clear.jpg';
+        bgImage = 'assets/img/weather/clear.jpg';
     }
 
     if (condition.includes('snow')) {
-        bgImage = 'assets/img/snow.jpg';
+        bgImage = 'assets/img/weather/snow.jpg';
     }
 
     if (condition.includes('thunderstorm')) {
-        bgImage = 'assets/img/thunderstrom.jpg';
+        bgImage = 'assets/img/weather/thunderstrom.jpg';
     }
 
     if (condition.includes('fog') || condition.includes('mist')) {
-        bgImage = 'assets/img/mist.jpg';
+        bgImage = 'assets/img/weather/mist.jpg';
     }
 
-    if (condition.includes('overcast') || condition.includes('mist')) {
-        bgImage = 'assets/img/overcast.jpg';
+    if (condition.includes('overcast')) {
+        bgImage = 'assets/img/weather/overcast.jpg';
     }
 
-    if (condition.includes('sunny') || condition.includes('mist')) {
-        bgImage = 'assets/img/sunny.jpg';
+    if (condition.includes('sunny')) {
+        bgImage = 'assets/img/weather/sunny.jpg';
     }
 
     if (!bgImage) {
-        bgImage = 'img/default.jpg';
+        bgImage = 'img/weather/default.jpg';
     }
 
     weatherApp.style.backgroundImage = `url(${bgImage})`;
@@ -93,14 +93,14 @@ function updateFourDaysForecast(forecastData) {
             const weatherCondition = forecast.day.condition.text;
 
             forecastItem.innerHTML = `
-                <div class="flex items-center">
-                    <i class="${getWeatherIconClass(weatherCondition)} text-4xl"></i>  <!-- Ikon cuaca sesuai kondisi -->
+                <div class="flex-container">
+                    <i class="${getWeatherIconClass(weatherCondition)} icon-large"></i>  
                 </div>
-                <div class="text-center">
-                    <div class="text-xl">${dateString}</div>
-                    <div class="text-sm">${weatherCondition}</div>  <!-- Menampilkan deskripsi kondisi -->
+                <div class="text-center"> 
+                    <div class="text-xl text-white">${dateString}</div>
+                    <div class="text-sm text-white">${weatherCondition}</div> 
                 </div>
-                <div class="text-right text-xl">
+                <div class="text-right text-xl text-white"> 
                     ${forecast.day.avgtemp_c}°C
                 </div>
             `;
@@ -150,9 +150,14 @@ document.getElementById('search-button').addEventListener('click', function () {
 
 fetchWeather('Jakarta');
 
-const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobile-menu');
+document.addEventListener("DOMContentLoaded", () => {
+    const currentPath = window.location.pathname.split("/").pop();
+    const navLinks = document.querySelectorAll("nav ul li a");
 
-    hamburger.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
+    navLinks.forEach(link => {
+        if (link.getAttribute("href") === currentPath) {
+            link.classList.add("active");
+        }
     });
+
+});

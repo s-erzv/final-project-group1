@@ -4,63 +4,469 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Climate Tips</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-
-    <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: #233A25;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10
+        }
+
+        .logo img {
+            width: 50px;
+            height: 50px;
+            margin: 18px 0 0 2.5rem;
+        }
+
+        .navbar-desktop ul {
+            list-style: none;
+            display: flex;
+            gap: 5px;
+            margin: 18px 2.5rem 0 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 5px;
+        }
+
+
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 0.5rem 1.5rem;
+            transition: all 0.5s ease-in-out;
+            border-radius: 999px;
+        }
+
+        nav ul li a:hover {
+            background-color: white;
+            color: #233A25;
+        }
+        nav ul li a.active {
+            background-color: white;
+            color: #233A25;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            width: 95%;
+            height: auto;
+            min-height: 400px;
+            min-height: 15.7cm;
+            border-radius: 15px;
+            display: flex;
+            justify-content: left;
+            margin: 20px 0 0 35px ;
+            align-items: center;
+            background-image: url('../img/landscape.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .content {
+            max-width: 700px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .content h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin: 0 0 5px 1.5rem;
+            color: white;
+            text-shadow: 2px 2px 2px #333333;
+        }
+
+        .content h2 {
+            font-size: 1.2rem;
+            margin: 0 0 0 1.5rem;
+            font-weight: 500;
+            color: white;
+            text-shadow: 2px 2px 2px #707070;
+        }
+
+        /* Tips Section */
+        .tips {
+            min-height: 13cm;
+            padding: 2rem;
+        }
+
+        .tips h1 {
+            text-align: center;
+            font-size: 3rem;
+            margin-top: 8rem;
+            margin-bottom: 2rem;
+        }
+
+        .box-container-tips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            padding: 0 2rem;
+        }
+
+        .box-tips {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fdfdfd;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            border: 1px solid rgb(216, 216, 216);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .box-tips:hover {
+            transform: scale(1.1);
+        }
+
+        .box-tips img {
+            width: 6rem;
+            height: auto;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: justify;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+        }
+
+       .modal-text {
+        margin: 0 0 0 10px;
+       }
+
+        .modal-content img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .modal-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #aaa;
+        }
+
+        .close-btn:hover {
+            color: black;
+        }
+
+        /* Footer */
+        footer {
+            background-color: white;
+            border-top: 1px solid rgb(148, 148, 148);
+            padding: 10px 15px;
+            display: flex;
+            justify-content: center;
+            gap: 57rem;
+            margin: 3rem 0 0 0;
+        }
+
+        /* Mobile Styles */
+        @media screen and (max-width: 768px) {
+            .navbar-desktop {
+                display: none;
+            }
+        
+            .navbar-mobile {
+                display: block;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 100;
+            }
+        
+            #mobile-menu {
+                position: fixed;
+                top: 0;
+                left: -300px;
+                width: 250px;
+                height: 100%;
+                background-color:#233A25;
+                transition: left 0.3s ease-in-out;
+                padding-top: 80px;
+                z-index: 99;
+            }
+        
+            #mobile-menu.active {
+                left: 0;
+            }
+        
+            #mobile-menu ul {
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            #mobile-menu ul li {
+                width: 100%;
+                text-align: center;
+                padding: 15px 0;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+        
+            #mobile-menu ul li a {
+                display: block;
+                width: 100%;
+                color: white;
+                text-decoration: none;
+            }
+        
+            #mobile-menu ul li a:hover,
+            #mobile-menu ul li a.active {
+                background-color: white;
+                color: #233A25;
+            }
+        
+            .menu-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.5);
+                z-index: 98;
+                display: none;
+            }
+        
+            .menu-overlay.active {
+                display: block;
+            }
+        
+            .close-menu {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                width: 30px;
+                height: 30px;
+                cursor: pointer;
+            }
+        
+            .close-menu::before,
+            .close-menu::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 25px;
+                height: 3px;
+                background-color: white;
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+        
+            .close-menu::after {
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+
+            .hero {
+                width: 90%;
+                min-height: 300px;
+                margin: 10px auto;
+            }
+
+            .content h1 {
+                font-size: 1.5rem;
+                margin: 0 0 10px 1rem;
+            }
+
+            .content h2 {
+                font-size: 0.87rem;
+                margin: 0 0 0 1rem;
+            }
+
+            .tips h1 {
+                font-size: 2rem;
+                margin-top: 4rem;
+            }
+
+            .box-container-tips {
+                padding: 0 1rem;
+            }
+
+            .logo img {
+                width: 50px;
+                height: 50px;
+                margin: 0 0 0 1rem;
+            }
+        }
+
+        @media screen and (min-width: 769px) {
+            .navbar-mobile {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
-<section>
-<header>
-    <div class="logo">Logo</div>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="climateTips.html">Climate Tips</a></li>
-            <li><a href="weather.html">Weather</a></li>
-            <li><a href="carbonCalculator.html">Carbon Calculator</a></li>
-        </ul>
-    </nav>
-</header>
-<main>
-    <!-- Hero Section styart -->
-    <div class="hero" id="hero" style="background-image: url('assets/img/climateTips.jpg');">
-        <div class="content">
-            <h1 style="font-size: 2.5rem;">Small Changes, Big Impact <br>Your Guide to a Sustainable Future!</h1>
-            <h2>Discover practical tips and everyday actions to combat climate change. Let’s make a difference together, one step at a time.</h2>
+    <!-- Desktop Navbar -->
+    <header class="navbar-desktop">
+        <div class="logo">
+            <img src="assets/img/Logo-White.png" alt="Logo"/>
         </div>
-    </div>
-    <!-- Hero Section end -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="climateTips.html" class="active">Climate Tips</a></li>
+                <li><a href="weather.html">Weather</a></li>
+                <li><a href="carbonCalculator.html">Carbon Calculator</a></li>
+            </ul>
+        </nav>
+    </header>
 
-   <!-- Tips Climate-->
-    <div class="tips">
-        <h1>Tips n Trick ea</h1>
-        <div class="box-container-tips">
-            <div class="box" onclick="showModal('tips', 'Tips1')">Tips 1</div>
-            <div class="box" onclick="showModal('tips', 'Tips2')">Tips 2</div>
-            <div class="box" onclick="showModal('tips', 'Tips3')">Tips 3</div>
-            <div class="box" onclick="showModal('tips', 'Tips4')">Tips 4</div>
-            <div class="box" onclick="showModal('tips', 'Tips5')">Tips 5</div>
+    <!-- Mobile Navbar -->
+    <header class="navbar-mobile">
+        <div class="logo">
+            <img src="assets/img/logo.png" alt="Logo" onclick="toggleMenu()">
         </div>
+        <nav id="mobile-menu">
+            <div class="close-menu" onclick="toggleMenu()"></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="climateTips.html" class="active">Climate Tips</a></li>
+                <li><a href="weather.html">Weather</a></li>
+                <li><a href="carbonCalculator.html">Carbon Calculator</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Menu Overlay -->
+    <div class="menu-overlay" onclick="toggleMenu()"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <div class="hero" style="background-image: url('assets/img/climateTips.jpg');">
+            <div class="content">
+                <h1>Small Changes, Big Impact<br>Your Guide to a Sustainable Future!</h1>
+                <h2>Discover practical tips and everyday actions to combat climate change. Let's make a difference together, one step at a time.</h2>
+            </div>
+        </div>
+
+        <!-- Tips Section -->
+        <div class="tips">
+            <h1>Tips and Trick</h1>
+            <div class="box-container-tips">
+                <div class="box-tips" onclick="showModal('tips', 'Tips1')">
+                    <span>Mengurangi Konsumsi Energi</span>
+                    <img src="assets/img/tips/box-tips1.png" alt="Energy Tips">
+                </div>
+                <div class="box-tips" onclick="showModal('tips', 'Tips2')">
+                    <span>Transportasi Berkelanjutan</span>
+                    <img src="assets/img/tips/box-tips2.png" alt="Transport Tips">
+                </div>
+                <div class="box-tips" onclick="showModal('tips', 'Tips3')">
+                    <span>Konsumsi Makanan Ramah Lingkungan</span>
+                    <img src="assets/img/tips/box-tips3.png" alt="Food Tips">
+                </div>
+                <div class="box-tips" onclick="showModal('tips', 'Tips4')">
+                    <span>Pengelolaan Limbah</span>
+                    <img src="assets/img/tips/box-tips4.png" alt="Waste Tips">
+                </div>
+                <div class="box-tips" onclick="showModal('tips', 'Tips5')">
+                    <span>Pelestarian Sumber Daya</span>
+                    <img src="assets/img/tips/box-tips5.png" alt="Resource Tips">
+                </div>
+                <div class="box-tips" onclick="showModal('tips', 'Tips6')">
+                    <span>Meningkatkan Kesadaran dan Advokasi</span>
+                    <img src="assets/img/tips/box-tips6.png" alt="Awareness Tips">
+                </div>
+                <div class="box-tips" onclick="showModal('tips', 'Tips7')">
+                    <span>Mendukung Inovasi dan Teknologi</span>
+                    <img src="assets/img/tips/box-tips7.png" alt="Innovation Tips">
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
         <div id="modal-tips" class="modal">
             <div class="modal-content">
                 <span class="close-btn" onclick="closeModal('modal-tips')">&times;</span>
-                <h3>Tips for Climate Change</h3>
-                <p id="modal-content-tips">Isi tips akan ditampilkan di sini.</p>
+                <img id="modal-image-tips" src="" alt="Tips">
+                <div class="modal-text">
+                    <h3 id="modal-title-tips" class="modal-title"></h3>
+                    <p id="modal-content-tips"></p>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
 
-</main>
+    <footer>
+        <p>Copyright &copy; 2024 Sky Solutions</p>
+    </footer>
 
+    <script>
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuOverlay = document.querySelector('.menu-overlay');
+            mobileMenu.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+        }
 
-<footer>
-    <div class="logo-footer">Logo</div>
-    <p> Copyright &copy; 2024 Sky Solutions</p>
-</footer>
-<script src="assets/js/main.js"></script>
+        document.querySelectorAll('#mobile-menu ul li a').forEach(item => {
+            item.addEventListener('click', toggleMenu);
+        });
+    </script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -19,14 +19,24 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 10;
+    z-index: 10
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+    display: flex;
+    flex-direction: row;
     margin: 18px 0 0 2.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo h2{
     color: white;
+    font-size: 20px;
+}
+
+#pic-logo {
+    width: 60px;
 }
 
 nav ul {
@@ -60,6 +70,7 @@ nav ul li a.active {
     position: relative;
     width: 95%;
     height: auto;
+    min-height: 400px;
     min-height: 15.7cm;
     border-radius: 15px;
     display: flex;
@@ -128,7 +139,7 @@ nav ul li a.active {
     color: #233A25;
 } */
 
-.ic, .dic {
+.ic{
     display: flex;
     align-items: center;
     padding: 2rem 3rem;
@@ -153,6 +164,7 @@ nav ul li a.active {
     margin: 6rem 0 -40px 0;
     font-size: 3.3rem;
     text-align: left;
+    margin-bottom: 10px;
 }
 
 .ic h3, .pic h3, .dic h3 {
@@ -172,7 +184,6 @@ nav ul li a.active {
 }
 
 .pic {
-    text-align: center;
     display: flex;
     max-width: 98%;
     width: 98%;
@@ -191,9 +202,16 @@ nav ul li a.active {
     margin: 0 -25px 0 25px;
 }
 
-.pic-desc, .dic-desc {
+/* .pic-desc, .dic-desc {
     display: grid;
     float: right;
+    padding-right: 5.5rem;
+    margin-bottom: 5rem;
+} */
+
+.pic-desc, .dic-desc {
+    display: flex;
+    flex-direction: column;
     padding-right: 5.5rem;
     margin-bottom: 5rem;
 }
@@ -210,27 +228,29 @@ nav ul li a.active {
 
 .box-container-tips {
     display: flex;
+    flex-wrap: wrap;
+    overflow-y: hidden;
     gap: 30px;
     align-items: center;
     justify-content: center;
 }
 
-
 .box-container-p {
+    text-align: center;
     display: flex;
     gap: 30px;
-    margin-top: -80px;
+    margin-top: 10px;
+    flex-wrap: wrap;
 }
 
 .box-container-d {
     display: flex;
-    gap: 30px;
+    gap: 15px;
     margin-top: 20px;
-
+    flex-wrap: wrap;
 }
   
-.box {
-    padding: 20px;
+.box{
     background-color: #fdfdfd;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     border: 1px solid rgb(216, 216, 216);
@@ -239,7 +259,38 @@ nav ul li a.active {
     border-radius: 5px;
     margin-top: 2rem;
 }
-  
+
+.box-p {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 160px;
+}
+
+.box-p img{
+    padding-right: 2rem;
+}
+
+.box-d {
+    padding: 10px;
+    max-width: 100px;
+}
+
+.box-tips{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    text-align: center;
+    height: 200px;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 .box:hover {
     transform: scale(1.1);
 }
@@ -251,25 +302,50 @@ nav ul li a.active {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1000; 
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.modal-text {
+    padding: 0 10px;
+    font-size: smaller;
 }
 
 .modal-content {
-    position: relative;
-    margin: auto;
+    background-color: white;
     padding: 20px;
-    background-color: #fff;
-    z-index: 1010; 
+    border-radius: 8px;
+    text-align: justify;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
 }
 
+.modal-content img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
 
 .close-btn {
     position: absolute;
     top: 10px;
     right: 15px;
     color: #aaa;
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
     cursor: pointer;
 }
@@ -280,7 +356,6 @@ nav ul li a.active {
 }
 
 .dic {
-    text-align: center;
     display: flex;
     max-width: 98%;
     width: 98%;
@@ -294,11 +369,9 @@ nav ul li a.active {
     text-align: center;
     max-width: 98%;
     width: 98%;
-    padding: 0 0 2rem 6rem;
     height: auto;
     margin-top: 2rem;
     min-height: 16cm;
-
 }
 
 .grafik h1 {
@@ -350,21 +423,24 @@ nav ul li a.active {
     right: 10px;
 } */
 
-footer {
+footer:not(#footer-cc){
     background-color: white;
     border-top: 1px solid rgb(148, 148, 148);
     padding: 10px 15px;
     display: flex;
-    align-items: center;
+    justify-content: center;
     gap: 57rem;
     margin: 3rem 0 0 0;
 }
+/*mengecualikan footer calculator*/
 
-.logo-footer {
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding: 10px;
-    margin: 0 0 0 2rem;
+#footer-cc{
+    border-top: 1px solid rgb(148, 148, 148);
+    padding: 10px 15px;
+    display: flex;
+    justify-content: center;
+    gap: 57rem;
+    margin: 3rem 0 0 0;
 }
 
 footer p {
@@ -522,12 +598,6 @@ footer p {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button{
-    -webkit-appearance: none;
-    margin: 0;
-}
-
 .container-cch {
     width: 500px;
     min-height: 13.5cm;
@@ -557,6 +627,12 @@ input[type="number"] {
 
 input[type="number"]::placeholder {
     color: #999;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .btn-secondary {
@@ -593,18 +669,163 @@ input[type="number"]::placeholder {
 h1{
     margin: 20px 0 0 0;
  }
+  
+@media (max-width: 900px) {
+    nav{
+        display: none;
+    }
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
+    .logo {
+        margin: 10px 0;
+    }
 
-@media (max-width: 768px) {
+    .pic-desc, .dic-desc {
+        flex-direction: column;
+        padding-right: 0;
+    }
+
+    .ic{
+        padding-left: 0;
+    }
+
+    .hero {
+        margin: 10px;
+        padding: 10px;
+        min-height: 300px;
+    }
+
+    .content h1 {
+        font-size: 2.5rem;
+    }
+
+    .content h3 {
+        font-size: 1.2rem;
+    }
+
+    .ic{
+        padding: 0;
+        margin: 0;
+    }
+
+    .ic, .dic{
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    .pic{
+        padding: 0;
+        flex-direction: column;
+    }
+
+    .pic-desc{
+        padding: 2rem;
+    }
+
+    .ic, .dic {
+        align-items: start;
+        justify-content: start;
+    }
+
+    .pic img{
+        align-self: flex-end;
+        padding: 0;
+        margin: 0;
+        width: 98%;
+    }
+
+    .pic h1 {
+        margin-top: 1rem;
+    }
+
+    .ic img, .dic img, .pic img {
+        width: 100%;
+        max-width: 300px;
+        margin: 0;
+    }
+
+    .ic-desc, .dic-desc, .pic-desc {
+        text-align: center;
+    }
+
+    .box-container-p, .box-container-d {
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .box-d{
+        width: 125px;
+        height: 125px;
+        margin: 5px 0;
+        font-size: 1 rem;
+        overflow: hidden;
+    }
+
+    .box-p{
+        width: 125px;
+        height: 200px;
+        margin: 5px 0;
+        font-size: 1 rem;
+        overflow: hidden;
+    }
+
+    .box-p img{
+        padding-right: 0;
+    }
+
+    .tips h1 {
+        font-size: 2rem;
+    }
+
+    .grafik img {
+        width: 100%;
+        max-width: 500px; /* Adjust max width for smaller screens */
+    }
+
+    footer {
+        text-align: center;
+        padding: 10px;
+    }
+
+    .modal{
+        width: 100%;
+    }
+
+    .modal-content{
+        width: 80%;
+    }
+}
+
+@media (max-width: 488px) {
+    .logo{
+        display: none;
+    }
+
     .content h1 {
         font-size: 2rem;
     }
 
-    .weather-widget .temp {
-        font-size: 2rem;
+    .content h3 {
+        font-size: 1rem;
     }
 
-    .weather-widget .location {
-        font-size: 0.9rem;
+    .modal-title {
+        font-size: 20px;
+    }
+
+    .modal-text {
+        font-size: smaller;
+    }
+
+    .close-btn {
+        font-size: 24px;
+    }
+
+    .hero {
+        min-height: 200px;
     }
 }
