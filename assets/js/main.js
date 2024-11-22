@@ -1,15 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
     const currentPath = window.location.pathname.split("/").pop();
     const navLinks = document.querySelectorAll("nav ul li a");
-
+ 
     navLinks.forEach(link => {
         if (link.getAttribute("href") === currentPath) {
             link.classList.add("active");
         }
     });
-
+ 
 });
-
+ 
     const navItems = document.querySelectorAll('.nav-item');
     navItems.forEach(item => {
         item.addEventListener('click', function () {
@@ -163,30 +163,6 @@ window.onclick = function(event) {
     }
 };
 
-    let currentIndex = 0;
-
-    // function showSlide(index) {
-    //     const carousel = document.getElementById('carousel');
-    //     const slides = document.querySelectorAll('.carousel img');
-    //     if (index >= slides.length) {
-    //         currentIndex = 0;
-    //     } else if (index < 0) {
-    //         currentIndex = slides.length - 1;
-    //     } else {
-    //         currentIndex = index;
-    //     }
-    //     const offset = -currentIndex * 100;
-    //     carousel.style.transform = `translateX(${offset}%)`;
-    // }
-
-    // function nextSlide() {
-    //     showSlide(currentIndex + 1);
-    // }
-
-    // function prevSlide() {
-    //     showSlide(currentIndex - 1);
-    // }
-
     function calcCO2() {
         const mpg = parseFloat(document.getElementById('mpg').value);
         const distance = parseFloat(document.getElementById('dist').value);
@@ -217,3 +193,16 @@ window.onclick = function(event) {
     }
 
     document.querySelector('button').addEventListener('click', calcCO2);
+
+    function toggleMenu() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        
+        mobileMenu.classList.toggle('active');
+        menuOverlay.classList.toggle('active');
+    }
+ 
+ 
+    document.querySelectorAll('#mobile-menu ul li a').forEach(item => {
+        item.addEventListener('click', toggleMenu);
+    });
