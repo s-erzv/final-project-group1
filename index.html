@@ -6,7 +6,7 @@
     <title>Sky Solutions</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/index.css">
 
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,35 +14,51 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section>
-    <header>
+<section>
+    <!-- Desktop Navbar -->
+    <header class="navbar-desktop">
         <div class="logo">
-            <img id="pic-logo" src="assets/img/Logo-White.png"/>
+            <img src="assets/img/logo.png" alt="Logo">
             <h2>Sky Solutions</h2>
         </div>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="climateTips.html">Climate Tips</a></li>
+                <li><a href="weather.html">Weather</a></li>
+                <li><a href="carbonCalculator.html" >Carbon Calculator</a></li>
+            </ul>
+        </nav>
+    </header>
+ 
+    <!-- Mobile Navbar -->
+    <header class="navbar-mobile">
+        <div class="logo">
+            <img src="assets/img/logo.png" alt="Logo" id="logo" onclick="toggleMenu()">
+            <h2>Sky Solutions</h2>
+        </div>
+        <nav id="mobile-menu">
+            <div class="close-menu" onclick="toggleMenu()"></div>
+            
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="climateTips.html">Climate Tips</a></li>
                 <li><a href="weather.html">Weather</a></li>
                 <li><a href="carbonCalculator.html">Carbon Calculator</a></li>
             </ul>
         </nav>
     </header>
-    <!-- Hero Section styart -->
+
+    <!-- Menu Overlay -->
+    <div class="menu-overlay" onclick="toggleMenu()"></div>
+
+    <!-- Hero Section start -->
     <div class="hero" id="hero">
         <div class="content">
             <h1>Satu Bumi, Satu Kesempatan</h1>
             <h2>Wujudkan dunia yang berkelanjutan dengan <br>tindakan nyata hari ini</h2>
-            <!-- <div class="weather-widget">
-                <img src="assets/img/suhu.png" alt="Suhu">
-                <div class="weather-content">
-                    <span class="temp">29°C</span>
-                    <span class="location">Pisangan, Ciputat, Tangsel</span>
-                </div>
-            </div> -->
+            </div>
         </div>
-    </div>
     <!-- Hero Section end -->
 
     <!-- perubahan iklim section start -->
@@ -104,22 +120,22 @@
                 <h1>Dampak Perubahan Iklim</h1>
                 <h3>Perubahan iklim menyebabkan penurunan kualitas dan kuantitas air, kerusakan habitat, serta kepunahan spesies. Kebakaran hutan dan meningkatnya wabah penyakit semakin memperburuk situasi, sementara risiko kanker kulit dan berkurangnya produktivitas pertanian juga meningkat. Selain itu, kenaikan permukaan laut mengancam wilayah pesisir dan pulau kecil.</h3>
                 <div class="box-container-d">
-                    <div class="box box-d" onclick="showModal('dampak', 'dampak1')">
+                    <div class="box box-d" onclick="showModal('dampak', 'dampak1')">Kepunahan Ekosistem
                         <img src="assets/img/dampak/box-dampak1.png"/>
                     </div>
-                    <div class="box box-d" onclick="showModal('dampak', 'dampak2')">
+                    <div class="box box-d" onclick="showModal('dampak', 'dampak2')">Pangan dan Hasil Hutan
                         <img src="assets/img/dampak/box-dampak2.png"/>
                     </div>
-                    <div class="box box-d" onclick="showModal('dampak', 'dampak3')">
+                    <div class="box box-d" onclick="showModal('dampak', 'dampak3')">Dataran Rendah
                         <img src="assets/img/dampak/box-dampak3.png"/>
                     </div>
-                    <div class="box box-d" onclick="showModal('dampak', 'dampak4')">
+                    <div class="box box-d" onclick="showModal('dampak', 'dampak4')">Manajemen Air Tawar
                         <img src="assets/img/dampak/box-dampak4.png"/>
                     </div>
-                    <div class="box box-d" onclick="showModal('dampak', 'dampak5')">
+                    <div class="box box-d" onclick="showModal('dampak', 'dampak5')">Industri dan Masyarakat
                         <img src="assets/img/dampak/box-dampak5.png"/>
                     </div>
-                    <div class="box box-d" onclick="showModal('dampak', 'dampak6')">
+                    <div class="box box-d" onclick="showModal('dampak', 'dampak6')">Kesehatan
                         <img src="assets/img/dampak/box-dampak6.png"/>
                     </div>
                 </div>
@@ -141,19 +157,10 @@
     <!-- Dampak Perubahan Iklim section end -->
 
     <!-- Grafik section start -->
-     <div class="grafik">
+    <div class="grafik">
         <h1>Grafik Perubahan Iklim</h1>
         <img src="assets/img/grafikk.png" alt="Grafik">
-        <!-- <div class="carousel-container">
-            <div class="carousel" id="carousel">
-                <img src="assets/img/grafik1.jpg" alt="Image 1">
-                <img src="assets/img/graifik2.jpg" alt="Image 2">
-                <img src="assets/img/grafik3.jpg" alt="Image 3">
-            </div>
-            <button class="carousel-btn prev" onclick="prevSlide()">&#10094;</button>
-            <button class="carousel-btn next" onclick="nextSlide()">&#10095;</button>
-        </div> -->
-     </div>
+    </div>
     <!-- Grafik section end -->
 </section>
 <footer>

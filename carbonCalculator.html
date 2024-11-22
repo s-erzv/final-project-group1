@@ -4,28 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carbon Emission Calculator</title>
+    <link rel="stylesheet" href="assets/css/calculator.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
     <style>
-        :root {
-            --primary-color: #6a11cb;
-            --secondary-color: #2575fc;
-            --background-color: rgba(255, 255, 255, 0.2);
-            --nav-bg: #233A25;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             color: black;
             padding-top: 80px;
+            overflow-x: hidden;
             margin: 0;
             position: relative; /* Dibutuhkan untuk positioning elemen pseudo */
-            overflow: hidden; /* Mencegah elemen blur meluas keluar */
         }
         
         body::before {
@@ -39,291 +29,9 @@
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            filter: blur(8px); /* Membuat gambar blur */
-            z-index: -1; /* Menempatkan gambar di belakang semua elemen */
-            transform: scale(1.1); /* Untuk mencegah garis batas akibat blur */
-        }
-        
-        /* Navbar Styles */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 10;
-            background: transparent;
-            
-        }
-        
-        .logo img {
-            width: 50px; 
-            height: auto;
-            display: block;
-        }
-        
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 5px;
-        }
-
-        input[type="number"]::-webkit-inner-spin-button,
-        input[type="number"]::-webkit-outer-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: white;
-            font-size: 1rem;
-            font-weight: 600;
-            padding: 0.5rem 1.5rem;
-            transition: all 0.5s ease-in-out;
-            border-radius: 999px;
-        }
-        
-        nav ul li a:hover,
-        nav ul li a.active {
-            background-color: white;
-            color: #233A25;
-        }
-        
-        /* Main Container */
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        /* Carbon Calculator */
-        .carbon-calculator {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .calculator-inputs, 
-        .calculator-results {
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            color: black;
-        }
-        
-        .calculator-inputs {
-            background: whitesmoke;
-        }
-
-        .calculator-results h2 {
-            text-align:center;
-        }
-        
-        .calculator-results {
-            background: rgba(255, 255, 255, 0.2);
-        }
-        
-        .input-group {
-            margin-bottom: 20px;
-        }
-        
-        .input-group label {
-            display: block;
-            margin-bottom: 10px;
-            color: black;
-        }
-        
-        .input-group input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid black;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.1);
-            color: black;
-            text-align: center;
-        }
-        
-        .btn-calculate {
-            background: #7b9c5d;
-            color: black;
-            border: none;
-            padding: 12px;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-calculate:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-        
-        .result-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-        }
-        
-        .result-card {
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            padding: 15px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        
-        .result-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-        }
-        
-        .result-card h3 {
-            color: black;
-            margin-bottom: 10px;
-        }
-        
-        .result-card p {
-            color: black;
-            font-size: 1.2rem;
-            background: #7b9c5d;
-            padding: 5px;
-            border-radius: 5px;
-        }
-        
-        /* Mobile Responsive Styles */
-        @media screen and (max-width: 768px) {
-            body {
-                padding-top: 150px;
-            }
-        
-            .carbon-calculator {
-                grid-template-columns: 1fr;
-            }
-        
-            .result-grid {
-                grid-template-columns: 1fr;
-            }
-        
-            /* Mobile Navbar Styles */
-            .navbar-desktop {
-                display: none;
-            }
-        
-            .navbar-mobile {
-                display: block;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                z-index: 100;
-            }
-        
-            #mobile-menu {
-                position: fixed;
-                top: 0;
-                left: -300px;
-                width: 250px;
-                height: 100%;
-                background-color: var(--nav-bg);
-                transition: left 0.3s ease-in-out;
-                padding-top: 80px;
-                z-index: 99;
-            }
-        
-            #mobile-menu.active {
-                left: 0;
-            }
-        
-            #mobile-menu ul {
-                flex-direction: column;
-                align-items: center;
-            }
-        
-            #mobile-menu ul li {
-                width: 100%;
-                text-align: center;
-                padding: 15px 0;
-                border-bottom: 1px solid rgba(255,255,255,0.1);
-            }
-        
-            #mobile-menu ul li a {
-                display: block;
-                width: 100%;
-                color: white;
-                text-decoration: none;
-            }
-        
-            #mobile-menu ul li a:hover,
-            #mobile-menu ul li a.active {
-                background-color: white;
-                color: #233A25;
-            }
-        
-            .menu-overlay {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0,0,0,0.5);
-                z-index: 98;
-                display: none;
-            }
-        
-            .menu-overlay.active {
-                display: block;
-            }
-        
-            .close-menu {
-                position: absolute;
-                top: 20px;
-                right: 20px;
-                width: 30px;
-                height: 30px;
-                cursor: pointer;
-            }
-        
-            .close-menu::before,
-            .close-menu::after {
-                content: '';
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                width: 25px;
-                height: 3px;
-                background-color: white;
-                transform: translate(-50%, -50%) rotate(45deg);
-            }
-        
-            .close-menu::after {
-                transform: translate(-50%, -50%) rotate(-45deg);
-            }
-        }
-        
-        @media screen and (min-width: 769px) {
-            .navbar-mobile {
-                display: none;
-            }
-        }
-        
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 15px;
-            color: white;
-            background: transparent;
-            margin-top: 20px;
+            filter: blur(8px); 
+            z-index: -1; 
+            transform: scale(1.1); 
         }
     </style>
 </head>
@@ -332,6 +40,7 @@
     <header class="navbar-desktop">
         <div class="logo">
             <img src="assets/img/logo.png" alt="Logo">
+            <h2>Sky Solutions</h2>
         </div>
         <nav>
             <ul>
@@ -347,6 +56,7 @@
     <header class="navbar-mobile">
         <div class="logo">
             <img src="assets/img/logo.png" alt="Logo" id="logo" onclick="toggleMenu()">
+            <h2>Sky Solutions</h2>
         </div>
         <nav id="mobile-menu">
             <div class="close-menu" onclick="toggleMenu()"></div>
@@ -369,7 +79,7 @@
             <div class="calculator-inputs">
                 <h2>Carbon Calculator</h2>
                 <div class="input-group">
-                    <label for="mpg">Berapa MPG mobil Anda?</label>
+                    <label for="mpg">Berapa MPG kendaraan Anda?</label>
                     <input type="number" id="mpg" placeholder="Masukkan MPG">
                 </div>
                 <div class="input-group">
@@ -418,19 +128,5 @@
 
     <!-- Scripts -->
     <script src="assets/js/main.js"></script>
-    <script>
-        function toggleMenu() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            const menuOverlay = document.querySelector('.menu-overlay');
-            
-            mobileMenu.classList.toggle('active');
-            menuOverlay.classList.toggle('active');
-        }
-
-        // Close menu when clicking a menu item
-        document.querySelectorAll('#mobile-menu ul li a').forEach(item => {
-            item.addEventListener('click', toggleMenu);
-        });
-    </script>
 </body>
 </html>

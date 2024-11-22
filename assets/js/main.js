@@ -217,3 +217,16 @@ window.onclick = function(event) {
     }
 
     document.querySelector('button').addEventListener('click', calcCO2);
+
+    function toggleMenu() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        
+        mobileMenu.classList.toggle('active');
+        menuOverlay.classList.toggle('active');
+    }
+
+
+    document.querySelectorAll('#mobile-menu ul li a').forEach(item => {
+        item.addEventListener('click', toggleMenu);
+    });
