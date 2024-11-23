@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     penyebab: {
         penyebab1: {
             title :"Efek Rumah Kaca",
-            text: "Gas Rumah Kaca sebagai penyebab perubahan iklim pertama dan berasal dari gas-gas rumah kaca. Banyak dari gas-gas ini terjadi secara alami, meski berbagai aktivitas manusia disekitarnya meningkatkan konsentrasinya di atmosfer, khususnya pada metana, karbon dioksida , gas berfluorinasi CO2 dan dinitrogen oksida sebagai gas rumah kaca yang paling umum diproduksi oleh aktivitas manusia serta bertanggung jawab atas 64% pemanasan global buatan manusia. Metana ini bertanggung jawab atas nitro oksida sebesar 6% dan 17% pemanasan global buatan manusia.",
+            text: "Gas Rumah Kaca sebagai penyebab perubahan iklim pertama dan berasal dari gas-gas rumah kaca. Banyak dari gas-gas ini terjadi secara alami, meski berbagai aktivitas manusia disekitarnya meningkatkan konsentrasinya di atmosfer, khususnya pada metana, karbon dioksida , gas berfluorinasi CO2 dan dinitrogen oksida sebagai gas rumah kaca yang paling umum diproduksi oleh aktivitas manusia serta bertanggung jawab atas 64% pemanasan global buatan manusia.",
             image: "assets/img/penyebab/penyebab1.jpeg"
         },
         penyebab2: {
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         penyebab4: {
             title :"Perubahan Orbit Bumi",
-            text: "Penyebab terjadinya perubahan iklim selanjutnya berasal dari orbit bumi yang mengalami perubahan. Dalam 800.000 tahun terakhir, terdapat siklus alami dalam iklim Bumi di antara zaman es serta periode interglasial yang lebih hangat. Orbit bumi yang berada di sekitar matahari adalah lingkaran bukannya elips. Kadang ia hampir melingkar dimana jarak Bumi berada kira-kira sama dari Matahari saat ia bergerak mengelilingi orbitnya. Pada waktu lainnya elips lebih menonjol hingga Bumi bergerak lebih dekat dan jauh dari matahari saat mengorbit. Saat Bumi lebih dekat ke matahari sendiri, iklim kemudian akan menjadi lebih hangat.",
+            text: "Penyebab terjadinya perubahan iklim selanjutnya berasal dari orbit bumi yang mengalami perubahan. Dalam 800.000 tahun terakhir, terdapat siklus alami dalam iklim Bumi di antara zaman es serta periode interglasial yang lebih hangat. Orbit bumi yang berada di sekitar matahari adalah lingkaran bukannya elips. Kadang ia hampir melingkar dimana jarak Bumi berada kira-kira sama dari Matahari saat ia bergerak mengelilingi orbitnya. Pada waktu lainnya elips lebih menonjol hingga Bumi bergerak lebih dekat dan jauh dari matahari saat mengorbit.",
             image: "assets/img/penyebab/penyebab4.jpeg"
         }
     },
@@ -51,12 +51,12 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         dampak2: {
             title :"Pangan dan Hasil Hutan",
-            text: "Diperkirakan produktivitas pertanian yang berada di daerah tropis akan mengalami penurunan jika terjadi kenaikan suhu rata-rata global di antara 1-2 derajat Celcius, hingga kemudian meningkatkan resiko bencana kelaparan.Meningkatnya frekuensi banjir serta kekeringan kemudian akan memberi dampak buruk terhadap  produksi lokal utamanya pada penyediaan pangan pada area tropis dan subtropis. Jika perubahan iklim kemudian terjadi, maka hasil panen akan turut menurun pula, baik dari segi kuantitas maupun kualitas. Berbagai dampak perubahan iklim ini juga dibahas pada buku Educomics Plants Vs Zombies: Cuaca Dan Iklim yang dikemas melalui ilustrasi sehingga lebih mudah dimengerti.",
+            text: "Diperkirakan produktivitas pertanian yang berada di daerah tropis akan mengalami penurunan jika terjadi kenaikan suhu rata-rata global di antara 1-2 derajat Celcius, hingga kemudian meningkatkan resiko bencana kelaparan. Meningkatnya frekuensi banjir serta kekeringan kemudian akan memberi dampak buruk terhadap  produksi lokal utamanya pada penyediaan pangan pada area tropis dan subtropis. Jika perubahan iklim kemudian terjadi, maka hasil panen akan turut menurun pula, baik dari segi kuantitas maupun kualitas. Dampak perubahan iklim ini juga dibahas pada buku Educomics Plants Vs Zombies: Cuaca Dan Iklim.",
             image: "assets/img/dampak/dampak2.jpeg"
         },
         dampak3: {
             title :"Pesisir dan Dataran Rendah",
-            text: "Daerah pantai akan kian rentan terhadap naiknya permukaan air laut dan erosi pantai. Kerusakan pesisir ini sendiri kemudian akan diperparah oleh berbagai tekanan manusia di daerah pesisir. Diperkirakan pada tahun 2080 nanti sekitar jutaan orang akan terkena banjir setiap tahun diakibatkan oleh naiknya permukaan air laut. Resiko terbesar yang akan dihadapi adalah padat penduduknya area di dataran rendah dengan tingkat adaptasi yang rendah. Selain itu sesungguhnya penduduk yang paling terancam ialah yang berada di Afrika dan delta-delta Afrika, Asia serta para penduduk yang bermukim di pulau-pulau kecil.",
+            text: "Daerah pantai akan kian rentan terhadap naiknya permukaan air laut dan erosi pantai. Kerusakan pesisir ini sendiri kemudian akan diperparah oleh berbagai tekanan manusia di daerah pesisir. Diperkirakan pada tahun 2080 nanti sekitar jutaan orang akan terkena banjir setiap tahun diakibatkan oleh naiknya permukaan air laut. Resiko terbesar yang akan dihadapi adalah padat penduduknya area di dataran rendah dengan tingkat adaptasi yang rendah. Selain itu sesungguhnya penduduk yang paling terancam ialah yang berada di Afrika, Asia serta para penduduk yang bermukim di pulau-pulau kecil.",
             image: "assets/img/dampak/dampak3.jpeg"
         },
         dampak4: {
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         dampak5: {
             title :"Industri, Permukiman dan Masyarakat",
-            text: "Industri, permukiman serta masyarakat yang kian rentan umumnya berada di daerah bantaran sungai dan pesisir serta mereka yang tingkat perekonomiannya terkait erat dengan keberadaan sumber daya yang sensitif terhadap iklim, juga ia yang tinggal di daerah-daerah yang sering dilanda berbagai bencana ekstrim, dimana urbanisasi biasanya kemudian berlangsung dengan sangat cepat. Komunitas dengan ekonomi kebawah sendiri sangat rentan karena kapasitas adaptasi yang mereka miliki terbatas, dan kehidupannya yang sangat tergantung pada sumberdaya, dimana Sumber Daya ini keberadaannya sangat mudah terpengaruh oleh iklim dan persediaan makanan juga air. Temukan pula pembahasan lebih lanjutnya pada buku Kebijakan Fiskal, Perubahan Iklim, dan Keberlanjutan Pembangunan",
+            text: "Industri, permukiman serta masyarakat yang kian rentan umumnya berada di daerah bantaran sungai dan pesisir serta mereka yang tingkat perekonomiannya terkait erat dengan keberadaan sumber daya yang sensitif terhadap iklim, juga ia yang tinggal di daerah-daerah yang sering dilanda berbagai bencana ekstrim, dimana urbanisasi biasanya kemudian berlangsung dengan sangat cepat. Komunitas dengan ekonomi kebawah sendiri sangat rentan karena kapasitas adaptasi yang mereka miliki terbatas, dan kehidupannya yang sangat tergantung pada sumber daya, dimana Sumber Daya ini keberadaannya sangat mudah terpengaruh oleh iklim dan persediaan makanan juga air.",
             image: "assets/img/dampak/dampak5.jpeg"
         },
         dampak6: {
@@ -162,31 +162,6 @@ window.onclick = function(event) {
         closeModal('modal-tips');
     }
 };
-
-    let currentIndex = 0;
-
-    // function showSlide(index) {
-    //     const carousel = document.getElementById('carousel');
-    //     const slides = document.querySelectorAll('.carousel img');
-    //     if (index >= slides.length) {
-    //         currentIndex = 0;
-    //     } else if (index < 0) {
-    //         currentIndex = slides.length - 1;
-    //     } else {
-    //         currentIndex = index;
-    //     }
-    //     const offset = -currentIndex * 100;
-    //     carousel.style.transform = `translateX(${offset}%)`;
-    // }
-
-    // function nextSlide() {
-    //     showSlide(currentIndex + 1);
-    // }
-
-    // function prevSlide() {
-    //     showSlide(currentIndex - 1);
-    // }
-
 
     function calcCO2() {
         const mpg = parseFloat(document.getElementById('mpg').value);
